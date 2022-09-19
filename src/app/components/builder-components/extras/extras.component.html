@@ -1,7 +1,7 @@
         <!-- 6 Forms -->
           <!-- form 1 -->
           <div *ngIf="row.component_type=='contact_form'" class="contact_block component_container">
-            <form (ngSubmit)="onSubmit()">
+            <form>
               <div *ngFor="let label of row.data" class="input-group">
                 <input type="text" class="form-control" placeholder="{{label.place_holder}}" formControlName="fullname">
                 <label for="fullName">{{label.label}}</label>
@@ -27,8 +27,8 @@
           <!--19  CTA  -->
           <div>
             <div class="about_container" *ngIf="row.component_type=='CTA Style1'">
-              <h2 class="title">{{row.title}}</h2>
-              <p class="content">{{row.content}}</p>
+              <h2 class="title">{{row.data.title}}</h2>
+              <p class="content">{{row.data.content}}</p>
               <ion-button class="button_name" fill="clear"> {{row.button_name}}</ion-button>
             </div>
           </div>
@@ -44,14 +44,14 @@
             </div>
           </div>
           <!-- SubHeader -->
-          <div *ngIf="row.component_type=='Subheader Style1'" class="aboutus bt1_bg"
-            [ngStyle]="img_style(row.image,'full-bg-img__')">
+          <div *ngIf="row.component_type=='Subheader Style1'" class="aboutus bt1_bg">
+            <!-- [ngStyle]="img_style(row.data.image,'full-bg-img__')"> -->
             <div class="header-title">
-              <h6 class="name">{{row.name}}</h6>
+              <h6 class="name">{{row.data.name}}</h6>
               <div class="Breadcrumb robot-font">
                 <span class=" mouse home" routerLink="/p/home-page"
                   routerDirection="root">Home</span>
-                <img class="image" src="{{row.image}}" alt="">
+                <img class="image" [src]="db.product_img(row.dataimage)" alt="">
                 <!-- <ion-icon class="top-v white-text icon" src="{{db.product_img(item.icon)}}"></ion-icon> -->
                 <span class="mouse name">{{row.name}}</span>
               </div>

@@ -4,6 +4,13 @@
     max-width: 100%;
 }
 
+@media only screen and (max-width: 768px){
+    .section_container{
+        display: flex !important;
+       flex-direction: column;
+    }
+} 
+
 
 // <div *ngFor="let row of detail_values"  [ngClass]="row.fullwidth? '':'container'">
 // <!-- <div  *ngIf="row.columns && row.columns.length != 0"> -->

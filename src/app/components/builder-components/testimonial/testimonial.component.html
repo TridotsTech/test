@@ -7,8 +7,8 @@
                   [src]="db.product_img(row.data.image)"alt="">
               </div>
               <div class="testimonial_details">
-                <h5 class="title">{{row.data.title}}</h5>
-                <h6 class="subtitle">{{row.data.subtitle}}</h6>
+                <h5 class="m-0 title">{{row.data.title}}</h5>
+                <h6 class="m-0 subtitle">{{row.data.subtitle}}</h6>
                 <p class="content webkit-text" [style.--line]="5">{{row.data.content}}</p>
                 <div class="d__flex">
                   <div *ngFor="let count of [0,1,2,3,4];">

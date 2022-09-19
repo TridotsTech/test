@@ -339,7 +339,6 @@ isInViewport(class_name){
       // this.check_footer(); 
 
       // bala
-    //  this.transparent_header=(this.website_settings.header_template && this.website_settings.header_template.enable_transparent);
   })
     
   }

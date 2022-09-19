@@ -30,11 +30,11 @@
        </ul>
       </li>
 
-      <div *ngIf="menu && menu.menus && menu.menus.length > 5" class="view__button">
-         <div [class.web_header]="web_header == true" class="d__flex more__">
+      <ul *ngIf="menu && menu.menus && menu.menus.length > 5" class="view__button">
+         <li [class.web_header]="web_header == true" class="d__flex more__">
           <a class="m-0">More</a>
           <ion-icon  name="chevron-down-outline"></ion-icon>
-         </div> 
+         </li> 
         <ul class="drop__down mouse">
           <li  *ngFor="let product of menu.menus.slice(8); let i=index" routerLink="/{{product.redirect_url}}" class="drop__sub"> 
             <div  class="d__flex just-s drop__categorys">
@@ -43,7 +43,7 @@
             </div>
           </li>
         </ul>
-      </div>
+      </ul>
 
       <div *ngIf="false && db.header_info.enable_wishlist == 0 || db.header_info.enable_cart == 0 || db.header_info.enable_account_menu == 0" class="d__flex menu__buttons">
 

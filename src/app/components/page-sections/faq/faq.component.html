@@ -1,6 +1,6 @@
 <!-- New section kailasam 12-08-2022  -->
 <div *ngIf="item.section_type == 'Custom Section' && item.section_name =='FAQ Style 1'" class="left__accordion_right_image section__border container_reverce  {{item.class_name}} animate mb-40" [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0">
-  <div class="main-width d__flex">
+  <div class="d__flex">
     <div class="box__1">
       <h5 *ngIf="item.sub_title" class="m-0 faq_subtitle">{{item.sub_title}}</h5>
       <h2 *ngIf="item.title" class="faq_title">{{item.title}}</h2>

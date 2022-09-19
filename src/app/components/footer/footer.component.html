@@ -84,20 +84,26 @@
     <ion-col class="go1-cms-copyright-fc-content">
       <a *ngIf="db.footer_info.fc_ct_type  == 'Custom'" [innerHtml]="db.footer_info.cp_fc_content"></a>
 
-      <ul *ngIf="db.footer_info.fc_ct_type  == 'Social Links'">
-        <!-- <li class="d__flex social__icons_" *ngFor="let item of db.footer_layout.social_links">
-          <a *ngIf="item.twitter_icon" href="" target="blank"><img [src]="db.product_img(item.twitter_icon)" class="contact-icon d__flex"/></a>
-          <a *ngIf="item.facebook_icon" href="" target="blank"><img [src]="db.product_img(item.facebook_icon)" class="contact-icon d__flex"/></a>
+      <ul *ngIf="db.footer_info.fc_ct_type  == 'Social Links' && (db.website_settings && db.website_settings.theme_settings && db.website_settings.theme_settings.social_links && db.website_settings.theme_settings.social_links.length != 0)">
+        <li class="d__flex social__icons_" *ngFor="let item of db.website_settings.theme_settings.social_links">
+          <a  [href]="item.link_url" target="blank"><img [src]="db.product_img(item.icon)" class="contact-icon d__flex"/></a>
+          <!-- <a *ngIf="item.facebook_icon" href="" target="blank"><img [src]="db.product_img(item.facebook_icon)" class="contact-icon d__flex"/></a>
           <a *ngIf="item.insta_icon" href="" target="blank"><img [src]="db.product_img(item.insta_icon)" class="contact-icon d__flex"/></a>
-          <a *ngIf="item.youtube_icon" href="" target="blank"><img [src]="db.product_img(item.youtube_icon)" class="contact-icon d__flex"/></a>
-        </li> -->
+          <a *ngIf="item.youtube_icon" href="" target="blank"><img [src]="db.product_img(item.youtube_icon)" class="contact-icon d__flex"/></a> -->
+        </li>
       </ul>
     </ion-col>
 
     <ion-col *ngIf="db.footer_info.copyright_layout == 'Two Column'" class="go1-cms-copyright-sc-content">
       <a *ngIf="db.footer_info.sc_ct_type  == 'Custom'" [innerHtml]="db.footer_info.sc_ct_type"></a>
 
-      <ul *ngIf="db.footer_info.sc_ct_type  == 'Social Links'">
+      <ul *ngIf="db.footer_info.sc_ct_type  == 'Social Links' && (db.website_settings && db.website_settings.theme_settings && db.website_settings.theme_settings.social_links && db.website_settings.theme_settings.social_links.length != 0)">
+        <li class="d__flex social__icons_" *ngFor="let item of db.website_settings.theme_settings.social_links">
+          <a  [href]="item.link_url" target="blank"><img [src]="db.product_img(item.icon)" class="contact-icon d__flex"/></a>
+          <!-- <a *ngIf="item.facebook_icon" href="" target="blank"><img [src]="db.product_img(item.facebook_icon)" class="contact-icon d__flex"/></a>
+          <a *ngIf="item.insta_icon" href="" target="blank"><img [src]="db.product_img(item.insta_icon)" class="contact-icon d__flex"/></a>
+          <a *ngIf="item.youtube_icon" href="" target="blank"><img [src]="db.product_img(item.youtube_icon)" class="contact-icon d__flex"/></a> -->
+        </li>
         <!-- <li class="d__flex social__icons_" *ngFor="let item of db.footer_layout.social_links">
           <a *ngIf="item.twitter_icon" href="" target="blank"><img [src]="db.product_img(item.twitter_icon)" class="contact-icon d__flex"/></a>
           <a *ngIf="item.facebook_icon" href="" target="blank"><img [src]="db.product_img(item.facebook_icon)" class="contact-icon d__flex"/></a>

@@ -79,11 +79,18 @@ export class InternshipPage implements OnInit {
            
         if(data.message && data.message.header_content){
           this.db.header_info = data.message.header_content;
-          // console.log('aklcasscalmc')
+          // this.db.header_info_item =  this.db.header_info.items;
+          this.db.transparent_header=this.db.header_info.is_transparent_header;
+          this.db.header_layout = JSON.parse(this.db.header_info.layout_json);
+          this.db.check_header_layout();
         }else{
 
-          if(this.db.website_settings && this.db.website_settings.header_template){
+          if(this.db.website_settings && this.db.website_settings.header_template){            
             this.db.header_info = this.db.website_settings.header_template;
+            // this.db.header_info_item =  this.db.header_info.items;
+            // this.db.transparent_header=this.db.header_info.is_transparent_header;
+            // this.db.header_layout=JSON.parse(this.db.header_info.layout_json);
+            // this.db.check_header_layout();
           }else{
             this.db.get_website_settings();
           }

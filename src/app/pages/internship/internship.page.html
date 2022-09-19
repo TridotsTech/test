@@ -6,7 +6,7 @@
 <ion-content [scrollEvents]="true" (ionScroll)="db.scrolled($event)">
 
 <!--   [class.sticky__]="db.scroll_event.header_sticky" absolute__header-->
-   <app-header class="desktop-header sticky__header" [class.transparent_header]="db.transparent_header==1 && db.transparent_header" [desktop]="true"></app-header>
+   <app-header class="desktop-header" [class.transparent_header]="db.transparent_header==1 && db.transparent_header" [desktop]="true"></app-header>
 
    <!-- <ion-grid class="header-bg" *ngIf="!db.ismobile">
       <ion-row>

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DbService } from 'src/app/services/db.service';
 
-interface ngStyleObj {
-  'grid-template-columns'?:string
-}
+// interface ngStyleObj {
+//   'grid-template-columns'?:string
+// }
 
 @Component({
   selector: 'app-template-builder',
@@ -18,16 +18,16 @@ export class TemplateBuilderComponent implements OnInit {
   ngOnInit() {
     console.log(this.sections)
   }
-  grid_columns:ngStyleObj
+  // grid_columns:ngStyleObj
   
         assign(data){
           let new_columns = ''
           data.columns.map(c=>{
              new_columns += new_columns.length==0 ? `${c.width}` : ` ${c.width}`
           })
-          this.grid_columns = {
+          let grid_columns = {
             'grid-template-columns':new_columns
           }
-          return this.grid_columns
+          return grid_columns
        }
 }
