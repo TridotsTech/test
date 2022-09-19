@@ -81,7 +81,7 @@
 <div *ngIf="db.footer_info && db.footer_info.enable_copyright == 1" class="go1-cms-copyright-content">
   <ion-row class="foot-d md hydrated d__flex just-s main-width">
   
-    <ion-col class="go1-cms-copyright-sc-content">
+    <ion-col class="go1-cms-copyright-fc-content">
       <a *ngIf="db.footer_info.fc_ct_type  == 'Custom'" [innerHtml]="db.footer_info.cp_fc_content"></a>
 
       <ul *ngIf="db.footer_info.fc_ct_type  == 'Social Links'">
@@ -94,7 +94,7 @@
       </ul>
     </ion-col>
 
-    <ion-col *ngIf="db.footer_info.copyright_layout == 'Two Column'" class="go1-cms-copyright-fc-content">
+    <ion-col *ngIf="db.footer_info.copyright_layout == 'Two Column'" class="go1-cms-copyright-sc-content">
       <a *ngIf="db.footer_info.sc_ct_type  == 'Custom'" [innerHtml]="db.footer_info.sc_ct_type"></a>
 
       <ul *ngIf="db.footer_info.sc_ct_type  == 'Social Links'">
