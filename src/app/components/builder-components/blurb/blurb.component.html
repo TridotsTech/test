@@ -1,0 +1,85 @@
+<!--18 Blurb/card -->
+          <!-- card 1 -->
+          <!-- <div class="component_container card_component" *ngIf="row.component_type=='Card_Style1'">
+              <img
+                [src]="row.image" alt="">
+              <div class="card1_content">
+                <h3 class="title">{{row.title}}</h3>
+                <p class="content">{{row.content}}
+                </p>
+                <ul class="social-icons">
+                  <li><a href="#">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a></li>
+                </ul>
+              </div>
+          </div> -->
+          <!-- card 1 -->
+          <div *ngIf="row.component_type=='Card Style1'" class="feature_image_width component_container">   
+                <div class="faq_icon">
+                  <!-- <ion-icon name="mail" size="large" class="counter_icon"></ion-icon> -->
+                  <img [src]="db.product_img(row.data.image)" alt="icon" class="image">
+                </div>
+                <div class="title_ text-left">
+                  <h3 class="title" [style.--line]="1">{{row.data.title}}</h3>
+                  <p class="content" [style.--line]="5">{{row.data.content}} </p>
+                </div>
+          </div>
+          <!-- 2 -->
+          <div class="content__container component_container" *ngIf="row.component_type=='Card Style2'">
+            <div class="cards_list">
+              <div class="sub_card_con">
+                <div class="feature_title_">
+                  <h3 class="title">
+                    {{row.data.title}}
+                  </h3>
+                </div>
+                <div class=" description_text desc_class fnt-16 fnt_400">
+                  <p class="content webkit-text" [style.--line]="3">{{row.data.content}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="card_list__container d__flex component_container" *ngIf="row.component_type=='Card Style3'">              
+                <div class="top_icon bg_icon">
+                  <!-- <ion-icon name="mail" class="counter_icon"></ion-icon> -->
+                  <img *ngIf="row.data.image" [src]="db.product_img(row.data.image)">
+                </div>
+                <div class="feature__title_">
+                  <h3 class="title">
+                    {{row.data.title}}
+                  </h3>
+                </div>
+                <p class="content">{{row.data.content}}</p>
+                <div class="learn_more d__flex">
+                  <h5 class="button_name">
+                    {{row.data.button_name}}
+                  </h5>
+                  <ion-icon name="chevron-forward-outline"></ion-icon>  
+                </div>
+          </div>
+          <!--  4-->
+          <div class="hover_card_list__container component_container" *ngIf="row.component_type=='Card Style4'">
+            <div class="cards_list">
+              <div class="top_icon_card_container d__flex">
+                <div class="top_icon">
+                  <!-- <ion-icon name="mail" class="counter_icon"></ion-icon> -->
+                  <img *ngIf="row.data.image" [src]="db.product_img(row.data.image)" class="image">
+                </div>
+                <div class="hover_title_">
+                  <h3 class="title">
+                    {{row.data.title}}
+                  </h3>
+                </div>
+                <p class="content webkit-text"
+                  [style.--line]="3">{{row.data.content}} </p>
+                <div class="learn_more d__flex">
+                  <h4 class="button_name">
+                    {{row.data.button_name}}
+                  </h4>
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>

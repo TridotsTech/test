@@ -1,0 +1,55 @@
+ <!-- 12 Counter -->
+          <!--  Counter 1 -->
+          <div class="component_container __wrap d__flex color_card_list" 
+          *ngIf="row.component_type=='Counter Style1'">
+                  <h2 class="c-section  count_color_change count_value">
+                    {{row.data.count_value}} +
+                  </h2>
+                  <div class="title_">
+                    <h4 class="m-0 count_title">
+                      {{row.data.count_title}}
+                    </h4>
+                  </div>
+                  <p class="count_description webkit-text"
+                    [style.--line]="1">
+                    {{row.data.count_description}}
+                  </p>
+          </div>
+          <!-- Counter 2 -->
+          <div *ngIf="row.component_type=='Counter Style2'" class="counter__div component_container ">
+                <h2 class="value_count color_primary heading counter_value" data-target="{{row.count_value}}">{{row.data.count_value}}
+                </h2>
+                <h4 class="value_desc">
+                  <span class="count_title  webkit-text" [style.--line]="1"> {{row.data.count_title}}</span>
+                </h4>
+          </div>
+          <!-- Counter 3 -->
+          <div *ngIf="row.component_type=='Counter Style3'" class="loop_count_icon d__flex __wrap component_container ">
+            <div class="icon_count d__flex">
+              <div class="icon_back icon color_primary">
+                <ion-icon name="mail" class="counter_icon"></ion-icon> 
+              </div>
+              <div class="bordered_icon">
+                <h2 class="count_value">{{row.data.count_value}}
+                </h2>
+                <h4 class="description_text  desc_class count_title">
+                  {{row.data.count_title}}
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- Counter 4 -->
+          <div *ngIf="row.component_type=='Counter Style4'" class="counter_content component_container">      
+              <h2 class="heading count_value" name="">{{row.data.count_value}}</h2>
+              <h4 class="description_text desc_class  m-0 webkit-text count_title" [style.--line]="1">{{row.data.count_title}}</h4>
+          </div>
+          <!-- Counter 5 -->
+          <div *ngIf="row.component_type=='Counter Style5'" class="counter_section component_container">
+              <h2 class=" heading count_value">{{row.data.count_value}}</h2>
+              <h4 class="description_text desc_class webkit-text count_title" [style.--line]="1">{{row.data.count_title}}</h4>
+          </div>
+          <!-- Counter 6 -->
+          <div *ngIf="row.component_type=='Counter Style6'" class="component_container container_bg"> 
+                <h2 class="count_font heading count_value">{{row.data.count_value}}</h2>
+                <h4 class="count_title" [style.--line]="2">{{row.data.count_title}}</h4>
+          </div>

@@ -1,0 +1,65 @@
+
+<app-header [title]="titles+' Registration'" [no_home]="true" [back_route]="db.ismobile?'/home':'/'" [no_cart]="true"></app-header>
+<ion-content class="register-form">
+
+  <app-header class="desktop-header"  [desktop]="true"></app-header>
+
+      <div class="con" [class.min-vh]="!db.ismobile"> 
+        <div class="logo" *ngIf="form_type == 'student'" >
+          <img class="clear-image" src="assets/image/registration-slider-alt.png" alt="">
+        </div> 
+
+        <h5 *ngIf="!db.submitted_data" class="h5">{{titles}} Registration</h5>
+        
+        <div class="form" *ngIf="!db.submitted_data">
+
+          <app-dynamic-form [myform]="order_form" [form_values]="item" [submitted]="submitted" [form_data]="forms_data1" [current_value]="current_value"></app-dynamic-form>
+
+          <div class="button d__flex"><ion-button  class="back" fill="clear" (click)="save_form()" >Submit</ion-button></div>
+          
+          <p><span> 1) </span> Privacy Statement: Data collected during registration is solely used for internal purposes. Nunmaan Tamil Academy doesn’t share/sell any information with any third parties.</p>
+
+          <div *ngIf="form_type == 'student-volunteer'">
+            <p><span>2) </span>Submission of this form doesn’t guarantee volunteering opportunity with Nunmaan. Our administration team will schedule an interview screening process..</p>
+          </div>
+
+        </div>
+        
+        <div class="successfully" *ngIf="db.submitted_data && form_type == 'student'">
+          <h3 class="title1">Thank you for your submission!</h3>
+          <h3 class="title2">Payment Required to Complete Registration</h3>
+          <h3 class="title2">Preferred method of payment is via <span>Zelle </span> to paynunmaan@gmail.com</h3>
+          <h3 class="title2">Add Student Full Name – in additional information during payment </h3>
+          <h3 class="title2">If using Mobile App, use QR Code below</h3>
+          <div class="paymet"><img src="assets/icon/qr.jpg" alt=""></div>
+          <h3 class="title2"><span>Make check payable to</span>  - Nunmaan Tamil Academy</h3>
+          <h3 class="title2">In Memo – Add student First Name Last Name - Grade, Online or In Person</h3>
+          <h3 class="title2">Ex: Little Mermaind 3, In Person</h3>
+          <h3 class="title2">Ex: Donald Duck, 2, Online</h3>
+          <h3 class="title2"><span>Mail To:</span> Nunmaan Tamil Academy</h3>
+          <h3 class="title2">29 CRESTFIELD AVE, TROY, MI 48085</h3>
+          <h3 class="title2">For questions regarding Registration contact – contact@nunmaan.org </h3>
+          <h3 class="title2">For Payment questions contact – (248) -935-7017</h3>
+          <div class="go_back"><ion-button class="next" fill="clear" routerLink="/home">Go to home</ion-button></div>
+        </div>
+
+
+        <div class="successfully" *ngIf="db.submitted_data && form_type != 'student'">
+          <h3 class="title1">Thanks you for your submission!</h3>
+        </div>
+
+      </div>
+      
+      <div class="color" *ngIf="!db.ismobile">
+        <div class="main-width m-h">
+            <app-footer  class="footer"></app-footer>
+        </div>
+      </div>
+
+</ion-content>
+
+
+
+<!-- [class.just-a]="db.submitted_data" -->
+<!-- <h2 *ngIf="db.submitted_data">Your Registration sumbmitted sccessfully</h2> -->
+<!-- (click)="!db.submitted_data?insert_data():redirect()" >{{!db.submitted_data?'Submit':'Home Page'}} -->

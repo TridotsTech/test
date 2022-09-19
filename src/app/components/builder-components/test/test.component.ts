@@ -1,0 +1,30 @@
+import { Component, OnInit ,ViewChild,Input} from '@angular/core';
+import { DbService } from 'src/app/services/db.service';
+
+
+
+@Component({
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.scss'],
+})
+export class TestComponent implements OnInit {
+  @Input() row;
+  constructor(public db:DbService) { }
+
+  ngOnInit() {
+  }
+  
+  
+ checkIsShow(tabs,tab,row){
+  tabs.map((res,i)=>{
+    if(i == tab){
+      res.isShow = true;
+      row.content = res.content
+    }else{
+      res.isShow = false;
+    }
+  })
+ }
+
+}

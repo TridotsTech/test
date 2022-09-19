@@ -1,0 +1,21 @@
+
+
+
+<app-header *ngIf="db.ismobile" title="{{internship}}" [no_home]="true" [back_route]="db.ismobile?'/home':'/'" [no_cart]="true"></app-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="db.scrolled($event)">
+
+   <app-header class="desktop-header sticky__header" [class.transparent_header]="db.transparent_header&& db.transparent_header == 1" [desktop]="true"></app-header>
+
+   <div  [class.min-vh]="!db.ismobile">
+      <!-- <app-page-builder *ngIf="content_data && content_data.length != 0" [about_us]="true" [internship]="internship" [viewContent]="content_data"></app-page-builder> -->
+      <app-template-builder *ngIf="content_data && content_data.length != 0"  [sections]="content_data"></app-template-builder>
+   </div>
+   
+   <div class="color" *ngIf="!db.ismobile">
+      <div class="m-h">
+        <app-footer  class="footer"></app-footer>
+      </div>
+  </div>
+</ion-content>
+

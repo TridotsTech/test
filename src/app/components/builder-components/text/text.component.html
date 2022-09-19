@@ -1,0 +1,17 @@
+<!--1 Text -->
+          <!-- Title -->
+          <h2 *ngIf="row.component_type=='Text'" class="title component_container">
+            {{row.data.title}}
+          </h2>
+          <!-- subtitle -->
+          <h6 *ngIf="row.component_type=='Subtitle'" class="component_container subtitle">
+            {{row.data.subtitle}}
+          </h6>
+          <!-- subtitle_2 -->
+          <h6 *ngIf="row.component_type=='Subtitle Style2'" class="component_container subtitle">
+            {{row.data.subtitle}}
+          </h6>
+          <!-- description -->
+          <p *ngIf="row.component_type=='Description Style1'" class="content component_container">
+            {{row.data.content}}
+          </p>

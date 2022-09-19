@@ -1,0 +1,9 @@
+<div>
+    <!-- CTA  -->
+
+  <div class="about_container container_order txt-c {{item.class_name}} animate py-30" *ngIf="item.section_type == 'Static Section' && item.section_name =='CTA'" [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0">
+   <h2 class="title">{{item.title}}</h2>
+   <h5 class="about_content subtitle">{{item.subtitle}}</h5>
+   <ion-button *ngIf="item.btn_text" class="about_button btn" fill="clear" (click)="db.route_url(item.btn_text.btn_redirect_url)">{{item.btn_text.btn_text}}</ion-button>
+  </div>
+</div>
