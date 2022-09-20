@@ -167,8 +167,8 @@
 
   <div class="testimonialThree_container align_center mb-40" *ngIf="item.section_type == 'Custom Section' && item.section_name =='Testimonials Style 3'"
   [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0">
-    <h2 class="title__testi title txt-c">{{item.title}}</h2>
-    <h5 class=" title__sub_testi subtitle txt-c">{{item.sub_title}}</h5>
+    <p class="title txt-c">{{item.title}}</p>
+    <h2 class="subtitle txt-c">{{item.sub_title}}</h2>
     <ion-slides class="web-slider mouse testimonial_slides" pager="true" loop="true" 
     [options]="db.ismobile?mobile_slider:web_slider_one">
     <ion-slide *ngFor="let data of item.data">
@@ -176,7 +176,7 @@
         <div class="testimonialThree_image">
           <img [src]="db.product_img(data.image)" alt="">
         </div>
-        <h4 class="m-0">"{{data.title}}"</h4>
+        <h4 class="">"{{data.title}}"</h4>
         <div class="mg_10">
           <ion-icon color="warning" name="star"></ion-icon>
           <ion-icon color="warning" name="star"></ion-icon>
@@ -185,8 +185,8 @@
           <ion-icon color="warning" name="star"></ion-icon>
         </div>
         <p class="mg_10  content webkit-text" [style.--line]="5">"{{data.content}}"</p>
-        <h4 class="mg_40 testi_3_head  heading">{{data.person_name}}</h4>
-        <h6 class="testi_role role">{{data.person_role}}</h6>
+        <h4 class="heading">{{data.person_name}}</h4>
+        <h6 class="">{{data.person_role}}</h6>
       </div>
     </ion-slide>
     </ion-slides>

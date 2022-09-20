@@ -99,7 +99,7 @@
 
 <!-- SLider--5 -->
   <!-- [style.background-image]="'url('+db.product_img(item.bg_image)+')'" -->
-  <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'Content with slider 4'" class="header_slider_five_bg {{item.class_name}} "[style.background-image]="'url('+db.product_img(item.bg_image)+')'">
+  <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'Content with slider 4'" class="header_slider_five_bg {{item.class_name}} "[style.background-image]="item.bg_image==undefined ? '' : 'url('+db.product_img(item.bg_image)+')'">
     <div class="main-width flex_row main_flex">
       <div class="slider_five_content ">
         <h5 class="slider_five_subtitle title heading sub_title m-0">{{item.sub_title}}</h5>

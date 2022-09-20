@@ -12,11 +12,12 @@ export class LandingPagePage implements OnInit {
   constructor(public db:DbService) { }
 
   ngOnInit() {
+    this.get_about();
   }
 
 
-  get_about(page){
-    var res={  application_type: this.db.ismobile?"mobile":"web", domain: this.db.domainurl,  route: page }
+  get_about(){
+    var res={  application_type: this.db.ismobile?"mobile":"web", domain: this.db.domainurl,  route: "Landing-page" }
     this.db.get_mobile_homepage(res).subscribe(data => 
       {
         this.content_data = (data.message.page_content) || (data.message.list_content);

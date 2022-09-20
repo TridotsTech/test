@@ -38,7 +38,7 @@ export class ListPage implements OnInit {
 
 
   scroll_to_Top(){
-    console.log('hello');
+    // console.log('hello');
     this.content.scrollToTop(400);
   }
 
@@ -47,7 +47,7 @@ export class ListPage implements OnInit {
     this.db.get_mobile_homepage(res).subscribe(data => 
       {
         this.content_data = data.message;
-        this.db.check_header_footer(this.content_data,data);
+        this.db.check_header_footer(this.content_data.page_content,data);
       
         // if(data.message && data.message.footer_content){
         //   // this.db.footer_info = data.message.footer_content.items;

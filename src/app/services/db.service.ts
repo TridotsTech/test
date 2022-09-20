@@ -135,7 +135,7 @@ export class DbService {
       this.scroll_event.mobile_header = true;       
   }
 
-  if(data.detail.scrollTop < 110){
+  if(data.detail.scrollTop < 245){
     this.scroll_event.header_sticky = false;
   }else{
     this.scroll_event.header_sticky = true;
@@ -331,6 +331,20 @@ isInViewport(class_name){
       }
     })
 
+    if(data.message && data.message.header_content){
+      this.header_info = data.message.header_content;
+      this.header_info.layout_json =  JSON.parse(this.header_info.layout_json);
+      this.check_header_layout();
+    }else{
+
+      if(this.website_settings && this.website_settings.header_template){
+        this.header_info = this.website_settings.header_template;
+      }else{
+        this.get_website_settings();
+      }
+    }
+
+
     if(data.message && data.message.footer_content){
        this.footer_info =  data.message.footer_content;
        this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
@@ -345,19 +359,6 @@ isInViewport(class_name){
       }
     }
        
-    if(data.message && data.message.header_content){
-      this.header_info = data.message.header_content;
-      this.header_info.layout_json =  JSON.parse(this.header_info.layout_json);
-      this.check_header_layout();
-    }else{
-
-      if(this.website_settings && this.website_settings.header_template){
-        this.header_info = this.website_settings.header_template;
-      }else{
-        this.get_website_settings();
-      }
-    }
-
   }
 
 

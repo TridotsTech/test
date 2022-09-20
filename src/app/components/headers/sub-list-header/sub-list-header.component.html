@@ -1,7 +1,7 @@
 
 <div  class="aboutus  sub_header bt1_bg" [ngStyle]="(sub_header_value.enabled == 1 && sub_header_value.is_transparent == 0) ? (sub_header_value.sub_header_bg_img ?  db.img_style(sub_header_value.sub_header_bg_img,'full-bg-img__')  : db.img_style(sub_header_value.sub_header_bg_color,'color')) : null" >
           <div class="header-title">
-             <h1 [style.color]="sub_header_value.text_color ? sub_header_value.text_color : null" class="white-text_ title">{{sub_header_value.sub_header_title}}</h1>
+             <h2 [style.color]="sub_header_value.text_color ? sub_header_value.text_color : null" class="white-text_ title">{{sub_header_value.sub_header_title}}</h2>
              <div class="Breadcrumb">
                 <span class="mr-5 mouse" [style.color]="sub_header_value.text_color ? sub_header_value.text_color : null" routerLink="/" routerDirection="root">Home</span>
                 <ion-icon [style.color]="sub_header_value.text_color ? sub_header_value.text_color : null" name="chevron-forward-outline"></ion-icon>

@@ -57,10 +57,11 @@
   position: relative;
   .empty_list{
     flex-direction: column;
-    position: absolute;
+    // position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
+    transform: translate(0%, 0%);
     img{
       height: 150px;
       width: 100%;

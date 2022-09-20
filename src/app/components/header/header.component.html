@@ -36,7 +36,7 @@
 
 <!-- Web site header -->
 <!--  [class.transparent_header]="db.transparent_header && db.transparent_header == 1 && !db.scroll_event.transparent_header"  -->
-<div *ngIf="desktop && !db.ismobile"  class="web__header  go1-cms-header"   [ngStyle]="(!db.scroll_event.header_sticky && sub_header_value && sub_header_value.enabled && sub_header_value.enabled == 1 && sub_header_value.is_transparent == 1) ? (sub_header_value.sub_header_bg_img ?  db.img_style(sub_header_value.sub_header_bg_img,'full-bg-img__')  : db.img_style(sub_header_value.sub_header_bg_color,'color')) : null"  (click)="close_menu()" [class.non_web__header]="db.video_header && db.path == '/'" >
+<div *ngIf="desktop && !db.ismobile"  class="web__header go1-cms-header" [class.transparent_header]="db.header_info && db.header_info.is_transparent_header && db.header_info.is_transparent_header == 1 && !db.scroll_event.transparent_header"   [ngStyle]="(!db.scroll_event.header_sticky && sub_header_value && sub_header_value.enabled && sub_header_value.enabled == 1 && sub_header_value.is_transparent == 1) ? (sub_header_value.sub_header_bg_img ?  db.img_style(sub_header_value.sub_header_bg_img,'full-bg-img__')  : db.img_style(sub_header_value.sub_header_bg_color,'color')) : null"  (click)="close_menu()" [class.non_web__header]="db.video_header && db.path == '/'" >
     <!-- [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" -->
     <div class="main-width">
       <app-web-header (cart_pop)="cart_pop.emit($event)"  [cat_products]="cat_products" ></app-web-header>

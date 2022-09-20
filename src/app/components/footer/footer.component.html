@@ -1,7 +1,7 @@
 <div *ngIf="db.footer_info && db.footer_info.layout_json && db.footer_info.layout_json.length != 0" class="f2 footer__container go1-cms-footer">
   <!-- <div> -->
     <div class="footer main-width" *ngFor="let col of db.footer_info.layout_json">
-      <div class="footer__" *ngFor="let col_item of col.columns" [ngStyle]="db.img_style(col_item.width,'width')">
+      <div class="footer_sec" *ngFor="let col_item of col.columns" [ngStyle]="db.img_style(col_item.width,'width')">
         <div  *ngFor="let item of col_item.layout_data" class="" [class.icon_short_address]="item.section_name == 'Footer Contact' || item.section_name == 'Footer About' || item.section_name == 'Newsletter Subscription'" [class.links_w_title]="item.section_name == 'Menu'" [class.icon_app_download]="item.section_name == 'Footer Payment Gateways'" [class.Copyrights]="item.section_name == 'Footer Copyrights'">
           <div  class="{{item.class_name}}" *ngIf="item.section_name == 'Footer Contact' && item.section_type == 'Static Section'">
             <h2 class="go1-cms-footer-title m-0">{{item.title}}</h2>

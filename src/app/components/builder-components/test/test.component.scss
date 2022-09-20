@@ -8,7 +8,7 @@ ion-button{
 //     font-weight: 700;
 //     font-size: 40px;
 //     // color: var(--primary-bg);
-//      color: #fff;
+//      color: var(--white);
 //      margin: 0 !important;
 // }
 // h2{
@@ -98,13 +98,13 @@ ion-button{
         font-size: 24px;
         margin-bottom: 10px;
         font-family: outfit;
-        color: #fff;
+        color: var(--white);
     }
     .ourteam_role{
         font-size: 16px;
         opacity: 0.5;
         font-family: outfit;
-        color: #fff;
+        color: var(--white);
     }
     .ourteam_info{
         position: absolute;
@@ -151,13 +151,13 @@ ion-button{
         margin-bottom: 10px;
         font-size: 22px;
         font-family: outfit;
-        color: #fff;
+        color: var(--white);
     }
     .ourteam_role{
         font-size: 16px;
         opacity: 0.5;
         font-family: outfit;
-        color: #fff;
+        color: var(--white);
     }
     .ourteam_two_image:hover {
         border-radius: 10px;
@@ -231,7 +231,7 @@ ion-button{
     // 
     display: inline-block;
     background: #473BF0;
-    color: #fff;
+    color: var(--white);
     padding: 12px 40px;
     font-size: 15px;
     border-radius: 50px;
@@ -313,7 +313,7 @@ ion-button{
   }
   
   .social-icons ion-icon {
-    color: #fff;
+    color: var(--white);
     position: absolute;
     top: 0.95em;
     left: 0.96em;
@@ -387,7 +387,7 @@ ion-button{
         margin: auto;   
     }
     .list_content:hover {
-        border-left: 4px solid var(--sample);
+        border-left: 4px solid var(--primary-color);
     }
 }
 .list_style2 {
@@ -543,7 +543,7 @@ border: 1px solid var(--primary-color);
         cursor: pointer;
     }
     .tablinks.active{
-        background-color: #fff;
+        background-color: var(--white);
     }
     .tab_content{
         border: 1px solid #ccc ;
@@ -677,7 +677,7 @@ border: 1px solid var(--primary-color);
     align-items: center;
    .icon_back{
     .counter_icon{font-size: 30px;}
-    background-color:#fff;
+    background-color:var(--white);
     padding: 10px;
     width: 48px;
     height: 48px;
@@ -716,7 +716,7 @@ border: 1px solid var(--primary-color);
     .sec-bg{width: 100%;}
 .container_bg{
     background-color: var(--primary-color);
-   color: #fff;
+   color: var(--white);
   padding: 20px;
     border-radius: 10px;
     max-width: 800px;
@@ -1145,7 +1145,7 @@ border: 1px solid var(--primary-color);
     height: 45px;
     span{
       text-transform: capitalize;
-      color: #fff;
+      color: var(--white);
       font-weight: 600;
       padding: 0 40px;
     }
@@ -1236,14 +1236,14 @@ border: 1px solid var(--primary-color);
       border: 1px solid var(--primary-color);
       .r_name{
         background: var(--primary-color);
-        color: #fff;
+        color: var(--white);
       }
       .blog-btn{
         background: var(--primary-color) !important;
         border-radius: 5px;
         span{
           text-transform: capitalize;
-          color: #fff;
+          color: var(--white);
         }
       }
     }
@@ -1251,13 +1251,13 @@ border: 1px solid var(--primary-color);
       background: var(--primary-color);
       // border: 1px solid var(--primary-color);
       .name,.r_name,.r_price,.month,.f_list,.plan_title{
-        color: #fff !important;
+        color: var(--white) !important;
       }
       ion-icon{
-        color: #fff;
+        color: var(--white);
       }
       .card1_btn{
-        background: #fff;
+        background: var(--white);
         border-radius: 5px;
         span{
           text-transform: capitalize;
@@ -1545,7 +1545,7 @@ border: 1px solid var(--primary-color);
 
     // CTA
     .about_container{
-        background-color: #f8f9fb;
+        background-color: var(--primary-color);
         font-family: poppins;
         padding-top:20px;
         padding-bottom:20px;
@@ -1560,9 +1560,9 @@ border: 1px solid var(--primary-color);
             font-weight: 600;
         }
         .about_button{
-            background-color: var(--sample);
+            --background: var(--primary-color);
             margin-top: 40px;
-            color: #fff;
+            color: var(--white);
             border-radius: 5px;
             text-transform: none;
             height: 40px;
@@ -1641,7 +1641,7 @@ border: 1px solid var(--primary-color);
         position: absolute;
         box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
         z-index: 99;
-        background-color: #fff;
+        background-color: var(--white);
         min-width: 200px;
         display: none;
         li:hover{
@@ -1674,7 +1674,7 @@ border: 1px solid var(--primary-color);
 .custom-button {
     ion-button{
         text-transform:none;
-        color:#fff;
+        color:var(--white);
         font-size: 12px;
         font-weight: 500;
         --background:var(--primary-color);
@@ -1704,7 +1704,7 @@ border: 1px solid var(--primary-color);
           // 
           height: 178px;
     padding: 10px 20px;
-    background: #fff;
+    background: var(--white);
     box-shadow: 0 10px 30px -10px rgb(151 163 184 / 50%);
     position: absolute;
     border-radius: 10px;
@@ -1743,10 +1743,7 @@ border: 1px solid var(--primary-color);
       }
       }
 }
- 
-.main-width{
-    width: 60%;
-}
+
 .container{
     width: 80%;
     margin: auto;
@@ -1774,7 +1771,7 @@ border: 1px solid var(--primary-color);
         height: 50px;
     max-width: 200px;
     color: #473BF0;
-    background-color: #fff;
+    background-color: var(--white);
     border: 1px solid;
     font-size: 20px;
     padding-inline: 15px;
@@ -1787,7 +1784,7 @@ border: 1px solid var(--primary-color);
         height: 50px;
     min-width: 160px;
     color: #0d2438;
-    background-color: #fff;
+    background-color: var(--white);
     font-size: 20px;
     margin-top: 45px;
     padding-inline: 15px;
@@ -1837,7 +1834,7 @@ border: 1px solid var(--primary-color);
     }
     .accordion_block{
         padding: 5px 30px 5px 30px;
-        background-color: #fff ;
+        background-color: var(--white) ;
         border-radius: 5px;
         margin-bottom: 10px;
         width: 100%;
