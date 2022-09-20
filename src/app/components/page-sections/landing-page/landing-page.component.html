@@ -1,4 +1,21 @@
 <div>
+  <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'landing page content slider'" class="header_slider_four_bg {{item.class_name}}">
+    <div class="main-width ">
+            <div class="slider_four_content">
+            <h5 class="slider_four_subtitle  sub_title">{{item.sub_title}}</h5>
+            <h1 class="slider_four_title title heading">{{item.title}}</h1>
+            <p class="slider_sec_four_title subtitle content">{{item.content}}</p>
+            <ion-button *ngIf="item.btn_text" class="header_four_btn btn" fill="clear" (click)="db.route_url(item.btn_text.btn_redirect_url)">{{item.btn_text.btn_text}}</ion-button>
+            <ion-button *ngIf="item.btn_text1" class="header_four_btn btn1" fill="clear" routerLink="/{{item.btn_text1.btn_redirect_url}}">{{item.btn_text1.btn_text}}</ion-button>
+          </div>
+          <div class=" main_cointain">
+            <div class="slider_center_image main_image">
+              <img src={{db.product_img(item.main_image)}} />
+            </div>
+          </div>
+    </div> 
+  </div>
+
   <div class="{{item.class_name}} py-30 Landing-sec1" *ngIf="item.section_type == 'Static Section' && item.section_name == '3 Column Card Section'">
     <div [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" >
         <div class="">
@@ -7,30 +24,28 @@
           <p class="description txt-c">{{item.description}}</p>
         </div>
         <ul class="list_section d__flex gap-15 flex-w">
-            <li class="p-10" *ngFor="let data of item.list_data;let i = index">
-                <div class="mouse p-15">
-                    <p class="m-0 title__ heading">{{data.title}}</p>
+            <li class="" *ngFor="let data of item.list_data;let i = index">
+                <div class="mouse p-5">
+                    <p class="m-0 txt-c color_white py-5">{{data.title}}</p>
                 </div>
-                <p class="m-0 desc_class fnt-14">{{data.description}}</p>
-                <div *ngIf="data.image" class="image">
+                <p class="m-0 txt-c p-5 color_white p-5">{{data.description}}</p>
                   <img src="{{db.product_img(data.image)}}" alt="">
-                </div>
             </li>
         </ul> 
     </div>
   </div>
 
   <div class="{{item.class_name}} py-30 Landing-sec2" *ngIf="item.section_type == 'Static Section' && item.section_name == 'CMS Elements Section'">
-    <div [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" class="py-30">
+    <div [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" >
         <div class="">
           <h5 class="subtitle txt-c">{{item.subtitle}}</h5>
           <h2 class="title txt-c">{{item.title}}</h2>
           <p class="description txt-c">{{item.description}}</p>
         </div>
-        <ul class="list_section d__flex gap-15 flex-w">
+        <ul class="list_section d__flex flex-w">
             <li class="p-10" *ngFor="let data of item.list">
-              <h4 class="txt-c">{{item.title_content}}</h4>
-              <p class="subtitle txt-c">{{item.element_text}}</p>
+              <h4 class="txt-c">{{data.title_content}}</h4>
+              <p class="subtitle txt-c">{{data.element_text}}</p>
             </li>
         </ul> 
     </div>
@@ -44,12 +59,44 @@
           <p class="description txt-c">{{item.description}}</p>
         </div>
         <ul class="list_section d__flex gap-15 flex-w">
-            <li class="p-10" *ngFor="let data of item.list_data">
-                <div *ngIf="data.image" class="image">
-                  <img src="{{db.product_img(data.image)}}" alt="">
+            <li class="" *ngFor="let data of item.List_data">
+                <div class="mouse p-5">
+                    <p class="m-0 txt-c color_white py-5">{{data.title}}</p>
                 </div>
+                <p class="m-0 txt-c p-5 color_white p-5">{{data.description}}</p>
+                  <img src="{{db.product_img(data.image)}}" alt="">
             </li>
         </ul> 
     </div>
   </div>
+
+  <div class="{{item.class_name}} py-30 Landing-sec4" *ngIf="item.section_type == 'Static Section' && item.section_name == 'UI Blocks Section'">
+    <div [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" >
+        <div class="">
+          <h5 class="subtitle txt-c">{{item.subtitle}}</h5>
+          <h2 class="title txt-c">{{item.title}}</h2>
+          <p class="description txt-c">{{item.description}}</p>
+        </div>
+        <ul class="list_section d__flex flex-w">
+            <li class="" *ngFor="let data of item.list_data">
+              <p class="txt-c m-0">{{data.ui_name}}</p>
+              <!-- <p class="subtitle txt-c">{{data.element_text}}</p> -->
+            </li>
+        </ul> 
+    </div>
+  </div>
+
+  <div class="{{item.class_name}} py-30 Landing-sec1" *ngIf="item.section_type == 'Static Section' && item.section_name == 'Customize Section'">
+    <div [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" >
+        <div class="">
+          <h5 class="subtitle txt-c">{{item.subtitle}}</h5>
+          <h2 class="title txt-c">{{item.title}}</h2>
+          <p class="description txt-c">{{item.description}}</p>
+        </div>
+        <div class="">
+          <img src="{{db.product_img(item.image)}}" alt="">
+        </div>
+    </div>
+  </div>
+
 </div>

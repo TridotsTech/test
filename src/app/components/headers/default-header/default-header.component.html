@@ -1,4 +1,4 @@
-<ul  class="default_header desktop__header  d__flex go1-cms-menu" >
+<ul *ngIf="menu && menu.menus && menu.menus.length != 0" class="default_header desktop__header  d__flex go1-cms-menu" >
       <!-- <div  class="drop__down__header" *ngFor="let product of db.header_info.menus.slice(0,8)" (mouseenter)="product.show = true" (mouseleave)="product.show = false"> -->
         <li  class="drop__down__header menu-item" *ngFor="let product of menu.menus.slice(0,5)" (mouseenter)="product.show = true" (mouseleave)="product.show = false">
         <a  *ngIf="product.menu_label" [class.web_header]="web_header == true" class="m-0 ion-text-center font just-c d__flex main__category mouse" [routerLink]="product.redirect_url"  routerDirection="back" [style.color]="!db.scroll_event.header_sticky ? sub_list_color : null " [class.header_menu]="product.redirect_url == db.header_menu">
@@ -36,7 +36,7 @@
           <ion-icon  name="chevron-down-outline"></ion-icon>
          </li> 
         <ul class="drop__down mouse">
-          <li  *ngFor="let product of menu.menus.slice(8); let i=index" routerLink="/{{product.redirect_url}}" class="drop__sub"> 
+          <li  *ngFor="let product of menu.menus.slice(5); let i=index" routerLink="/{{product.redirect_url}}" class="drop__sub"> 
             <div  class="d__flex just-s drop__categorys">
               <a class="menu_label">{{product.menu_label}}</a>
               <ion-icon  name="chevron-forward-outline"></ion-icon>

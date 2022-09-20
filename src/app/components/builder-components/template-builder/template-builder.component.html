@@ -1,5 +1,5 @@
 <div *ngFor="let data of sections">
-    <div *ngFor="let row of data.layout_json" class="section_container {{data.class_name}} main-width"  [ngStyle]="assign(row)">
+    <div *ngFor="let row of data.layout_json" class="section_container {{data.class_name}} main-width"  [ngStyle]="!db.ismobile && assign(row)">
         <!-- <div *ngIf="row.columns && row.columns.length > 0">  [ngClass]="row.fullwidth? '':'container'"-->
             <div *ngFor="let col of row.columns">
                 <div *ngIf="col.components && col.components.length > 0">
@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <!-- <div *ngIf="col.rows && col.rows.length > 0"> -->
-                    <div *ngFor="let row_ of col.rows" class="section_container" [ngStyle]="assign(row_)">
+                    <div *ngFor="let row_ of col.rows" class="section_container" [ngStyle]="!db.ismobile && assign(row_)">
                         <!-- <div *ngIf="row_.columns && row_.columns.length > 0"> -->
                             <div *ngFor="let col_ of row_.columns">
                                 <div *ngIf="col_.components && col_.components.length>0">

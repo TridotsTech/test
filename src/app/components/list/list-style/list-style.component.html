@@ -87,8 +87,8 @@
 
     <div class="empty_list d__flex" *ngIf="item.list_content.length == 0 && no_products">
       <img  class="icon" button  [src]="db.product_img('https://innila.tridotstech.com//files/no-product.svg')">
-      <h6 >No Product  Found!</h6>
-      <p>Sorry, there’re no products for this search!</p>
+      <h6 >No Records Found!</h6>
+      <!-- <p>Sorry, there’re no products for this search!</p> -->
     </div>
 
     <ion-infinite-scroll  *ngIf="!no_products" threshold="800px" (ionInfinite)="loadData($event,item)">

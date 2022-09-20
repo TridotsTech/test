@@ -20,11 +20,12 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.db.get_home_data();
+    // this.db.get_home_data();
   }
 
   ionViewWillEnter(){
     this.content.scrollToTop(400);
+    this.db.get_home_data();
     // this.router.params.subscribe((res)=>{this.content.scrollToTop(400);console.log('entered')})
   }
 

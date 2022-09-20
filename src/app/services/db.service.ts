@@ -25,11 +25,11 @@ export class DbService {
 
   // domain = "demo.go1cms.com";
   // domainurl = "demo.go1cms.com"
-  domain = "webservice.go1cms.com";
-  domainurl = "webservice.go1cms.com"
+  // domain = "webservice.go1cms.com";
+  // domainurl = "webservice.go1cms.com"
 
-  // domain = "core.go1cms.com";
-  // domainurl = "core.go1cms.com"
+  domain = "core.go1cms.com";
+  domainurl = "core.go1cms.com"
 
   // domain = "agency.go1cms.com";
   // domainurl = "agency.go1cms.com"

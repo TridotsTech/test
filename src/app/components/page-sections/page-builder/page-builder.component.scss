@@ -3463,21 +3463,21 @@ ion-slides {
 
   .box__1 {
     .head {
-      font-size: 36px;
-      color: var(--primary-color);
-      font-weight: 700;
+      // font-size: 36px;
+      // color: var(--primary-color);
+      // font-weight: 700;
 
       .span {
         //font-size: 40px;
-        font-weight: 600;
-        padding: 0 10px;
+        // font-weight: 600;
+        // padding: 0 10px;
       }
     }
 
     .sub_head__ {
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--body-text-color);
+      // font-size: 20px;
+      // font-weight: 400;
+      // color: var(--body-text-color);
     }
   }
 
@@ -3494,9 +3494,10 @@ ion-slides {
     position: relative;
 
     .container {
-      display: flex;
+      // display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
+      max-width: 100%;
 
       .grid__item_h {
         background: transparent !important;
@@ -3864,7 +3865,7 @@ ion-slides {
   }
 
   .Brands {
-    padding: 20px 15px;
+    // padding: 20px 15px;
 
     // .title{
     //     font-size: 16px !important;
@@ -3877,8 +3878,8 @@ ion-slides {
   }
 
   .Brands {
-    background: #fff;
-    margin-top: 5px;
+    // background: #fff;
+    // margin-top: 5px;
   }
 
   .Brands[_ngcontent-serverApp-c92] .relative[_ngcontent-serverApp-c92] .container[_ngcontent-serverApp-c92] .grid__item[_ngcontent-serverApp-c92] .image[_ngcontent-serverApp-c92] img[_ngcontent-serverApp-c92] {
@@ -4481,8 +4482,8 @@ ion-slides {
 
   .Brands {
     span {
-      font-size: 24px !important;
-      font-weight: 700 !important;
+      // font-size: 24px !important;
+      // font-weight: 700 !important;
     }
 
     .container {

@@ -4,8 +4,8 @@
     [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" >
       <div class="d__flex" [class.just-c]="!db.ismobile" [class.just-s]="db.ismobile" [ngStyle]="db.img_style(item.background_image,'img')">
       <div class="box__1" [class.margin-none]="item.section_name == 'Brands'" [class.just-c]="!db.ismobile">
-        <h2 *ngIf="item.title" class="m-0 txt-c head  title">{{item.title}}<span class="span spantitle">{{item.spantitle}}</span></h2>
-        <h5 *ngIf="item.subtitle" class="m-0 txt-c sub_head__  subtitle">{{item.subtitle}}</h5>
+        <h2 *ngIf="item.title" class="txt-c title">{{item.title}}<span class="span spantitle">{{item.spantitle}}</span></h2>
+        <h5 *ngIf="item.subtitle" class="txt-c subtitle">{{item.subtitle}}</h5>
       </div>
       </div>
     <div class="relative">

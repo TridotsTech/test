@@ -11,7 +11,7 @@ export class BlurbComponent implements OnInit {
   constructor(public db:DbService) { }
 
   ngOnInit() {
-    this.row.data.data = JSON.parse(this.row.data.data);
+    this.row.data.data = this.row.data.data &&  JSON.parse(this.row.data.data);
   }
 
 }
