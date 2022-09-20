@@ -91,9 +91,9 @@
     padding-bottom: 20px;
 }
 .border_line{
-    border: 1px solid var(--primary-color);
-    width: 20%;
-    margin-bottom: 10px;
+    // border: 1px solid var(--primary-color);
+    // width: 20%;
+    // margin: 10px 0;
   }
   .icon_short_address{
     .about{
@@ -234,25 +234,29 @@
 .border-top{
     border-top: 1px solid #ddd;
 }
+
 .sus-button {
-    
+    background: #f3f4f6;
+    border-radius: 25px;
     ion-input {
         height: 40px;
         --padding-start: 15px;
-        background: #f3f4f6;
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px;
+        // background: #f3f4f6;
+        // border-top-left-radius: 6px;
+        // border-bottom-left-radius: 6px;
     }
 
     ion-button {
-        margin: 0;
-        height: 40px;
-        box-shadow: none;
-        background: var(--body-text-color);
-        border-bottom-right-radius: 6px;
-        border-top-right-radius: 6px;
+        // margin: 0;
+        // height: 38px;
+        // box-shadow: none;
+        // background: var(--body-text-color);
+        // border-radius: 25px;
+        // font-size: 11px;
+        // text-transform: capitalize;
     }
 }
+
 .social__icons_{
     img{
         height: 35px;

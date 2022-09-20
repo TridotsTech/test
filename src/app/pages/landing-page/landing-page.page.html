@@ -3,7 +3,17 @@
 <ion-content>
   <app-header class="desktop-header"  [desktop]="true"></app-header>
 
-  <div [class.min-vh]="!db.ismobile" class="pagebuilder__container back_image">
-    <app-page-builder *ngIf="db.viewContent && db.viewContent.length != 0" [viewContent]="db.viewContent"></app-page-builder>
+  <div  [class.min-vh]="!db.ismobile">
+    <app-page-builder *ngIf="content_data && content_data.length != 0" [about_us]="true" [internship]="" [viewContent]="content_data"></app-page-builder>
+  </div>
+
+  <div class="color" *ngIf="!db.ismobile">
+    <div class="m-h">
+      <app-footer  class="footer"></app-footer>
+    </div>
+  </div>
+
+  <div class="scolltoTop" *ngIf="!db.ismobile && scroll_top && db.website_settings.theme_settings.back_to_top == 1" (click)="scrollToTop()">
+  <ion-icon name="chevron-up-outline"></ion-icon>
   </div>
 </ion-content>

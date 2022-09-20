@@ -3689,8 +3689,8 @@ ion-slides {
 
     .grid__item {
       border: unset !important;
-      min-height: 160px;
-      max-height: 160px;
+      min-height: 200px;
+      max-height: 200px;
 
       .image {
         max-height: 160px;
@@ -8079,21 +8079,34 @@ a:hover {
 .container_bg {
   // background-color: #663294;
 
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  border-radius: 10px;
+  // justify-content: center;
+  justify-content: space-between;
+    padding: 15px 30px;
+  // align-items: center;
+  // height: 200px;
+  // border-radius: 10px;
 
   .counter--list {
-    padding: 25px;
+    // padding: 25px;
+    // justify-content: space-between;
 
-    h2 {
+    .count_value {
+      font-size: 65px;
+      margin: 0;
+      width: auto;
       color: var(--white)
     }
 
+    // h2 {
+    //   color: var(--white)
+    // }
+
     .set--width {
-      width: 50%;
-      margin-left: 10px;
+      width: auto;
+      align-self: flex-end;
+      color: var(--white);
+      // width: 50%;
+      // margin-left: 10px;
     }
   }
 }
@@ -8414,7 +8427,7 @@ a:hover {
   top: 39.2% !important;
 }
 
-.mt-20{
+.mt-20 {
   margin-top: 20px;
 }
 

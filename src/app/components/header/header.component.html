@@ -2,7 +2,7 @@
 <app-mobile-header *ngIf="desktop == undefined" [home]="home" [back_route]="back_route" [no_home]="no_home" [no_cart]="no_cart" [title]="title" [no_search_icon]="no_search_icon"></app-mobile-header>
 
 <div>
-<div *ngIf="(db.header_info && db.header_info.enable_top_menu && db.header_info.enable_top_menu == 1)" [class.disable_top]="db.scroll_event.header_sticky_on_top && db.header_info.sticky_on_top == 0" class="go1-cms-top-bar" [ngClass]="{removecls:containerActive}" >
+<div *ngIf="(!db.ismobile && db.header_info && db.header_info.enable_top_menu && db.header_info.enable_top_menu == 1)" [class.disable_top]="db.scroll_event.header_sticky_on_top && db.header_info.sticky_on_top == 0" class="go1-cms-top-bar" [ngClass]="{removecls:containerActive}" >
   <!-- first-toolbar-container -->
   <div class="d__flex container just-s main-width">
   <div *ngIf="(db.header_info && db.header_info.top_menu && db.header_info.top_menu.left_items && db.header_info.top_menu.left_items.length != 0)" class="box_1  d__flex">

@@ -1,0 +1,17 @@
+.Landing-sec1{
+    .list_section{
+        li{
+            background: linear-gradient(45deg, rgba(255,133,0,1) 0%, rgba(219,0,182,1) 100%);
+            border-radius: 15px;
+            flex: 0 0 calc(33.333333% - 15px);
+            .image{
+                margin-top: 20px;
+                img{
+                    height: 240px;
+                    width: 380px;
+                    border: 10px;
+                }
+            }  
+        }
+    }
+}

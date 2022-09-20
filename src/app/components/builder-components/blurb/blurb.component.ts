@@ -10,6 +10,8 @@ export class BlurbComponent implements OnInit {
   @Input() row;
   constructor(public db:DbService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.row.data.data = JSON.parse(this.row.data.data);
+  }
 
 }

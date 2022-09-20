@@ -45,7 +45,7 @@
     <div class="main-width d__flex main-contain" [class.jus_start]="(item.position =='left'||item.position =='Left'||item.position =='LEFT'||item.position =='start'||item.position =='Start'||item.position =='START') && item.position" [class.jus_center]="(item.position =='center'||item.position =='Center'||item.position =='CENTER') && item.position"  [class.jus_end]="(item.position =='right'||item.position =='Right'||item.position =='RIGHT'||item.position =='End'||item.position =='end'||item.position =='END') && item.position">
       <div class="slider_content">
         <h5 class="slider_subtitle title heading m-0 sub_title">{{item.sub_title}}</h5>
-        <h2 class="slider_title title heading">{{item.title}}</h2>
+        <h1 class="slider_title title heading">{{item.title}}</h1>
         <p class="slider_sec_title subtitle content"[class.txt_center]="(item.position =='center'||item.position =='Center'||item.position =='CENTER') && item.position">
           {{item.content}}</p>
         <div class="d__flex" [class.jus_center]="(item.position =='center'||item.position =='Center'||item.position =='CENTER') && item.position">
@@ -61,7 +61,7 @@
     <div class="main-width flex_row d__flex">
       <div class="slider_three_content ">
         <h5 class="slider_three_subtitle title heading sub_title">{{item.sub_title}}</h5>
-        <h2 class="slider_three_title title heading">{{item.title}}</h2>
+        <h1 class="slider_three_title title heading">{{item.title}}</h1>
         <p class="slider_sec_three_title subtitle content">{{item.content}}</p>
         <ion-button *ngIf="item.btn_text" class="header_three_btn btn" fill="clear" (click)="db.route_url(item.btn_text.btn_redirect_url)">{{item.btn_text.btn_text}}</ion-button>
         <ion-button *ngIf="item.btn_text1" class="header_three_btn btn1" fill="clear" routerLink="/{{item.btn_text1.btn_redirect_url}}">{{item.btn_text1.btn_text}}</ion-button>
@@ -84,7 +84,7 @@
   <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'Content with slider 3'" class="header_slider_four_bg {{item.class_name}}" [style.background-image]="item.bg_image==undefined ? '' : 'url('+db.product_img(item.bg_image)+')'">
     <div class="main-width ">
             <div class="slider_four_content">
-            <h2 class="slider_four_title title heading">{{item.title}}</h2>
+            <h1 class="slider_four_title title heading">{{item.title}}</h1>
             <p class="slider_sec_four_title subtitle content">{{item.content}}</p>
             <ion-button *ngIf="item.btn_text" class="header_four_btn btn" fill="clear" (click)="db.route_url(item.btn_text.btn_redirect_url)">{{item.btn_text.btn_text}}</ion-button>
             <ion-button *ngIf="item.btn_text1" class="header_four_btn btn1" fill="clear" routerLink="/{{item.btn_text1.btn_redirect_url}}">{{item.btn_text1.btn_text}}</ion-button>
@@ -103,7 +103,7 @@
     <div class="main-width flex_row main_flex">
       <div class="slider_five_content ">
         <h5 class="slider_five_subtitle title heading sub_title m-0">{{item.sub_title}}</h5>
-        <h2 class="slider_five_title title heading">{{item.title}}</h2>
+        <h1 class="slider_five_title title heading">{{item.title}}</h1>
         <p class="slider_sec_five_title subtitle content">{{item.content}}</p>
         <div>
         <ion-button *ngIf="item.btn_text" class="header_five_btn btn" fill="clear" (click)="db.route_url(item.btn_text.btn_redirect_url)">{{item.btn_text.btn_text}}</ion-button>

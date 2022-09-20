@@ -1603,7 +1603,9 @@
           </div>
         </div>
         <div class="image_container">
+          <div class="image">
           <img [src]="db.product_img(item.right_img)" alt="banner_img">
+          </div>
         </div>
       </div>
       <div *ngIf="item.section_type == 'Static Section' && (item.section_name =='Our Team 1' || item.section_name =='Our Team 2' || item.section_name =='Our Team 3' || item.section_name =='Our Team 4' || item.section_name =='Our Team 5' || item.section_name =='Our Team 6' || item.section_name =='Our Team 7' || item.section_name =='Our Team 8')">
@@ -1638,6 +1640,9 @@
       </div>
       <div *ngIf="item.section_type == 'Static Section' && (item.section_name == 'List Style 1' || item.section_name == 'List Style 2' || item.section_name == 'List Style 3' || item.section_name == 'List Style 4' || item.section_name == 'List Style 5' || item.section_name == 'List Style 6')">
         <app-list-section [item]="item"></app-list-section>
+      </div>
+      <div *ngIf="item.section_type == 'Static Section' && (item.section_name == '3 Column Card Section')">
+        <app-landing-page [item]="item"></app-landing-page>
       </div>
     </div>
     <div>

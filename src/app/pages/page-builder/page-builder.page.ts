@@ -17,10 +17,12 @@ import {
 export class PageBuilderPage implements OnInit {
   content_data:any;
   internship:any = '';
-
+  route_value;
+  
   constructor(public route :ActivatedRoute,public db:DbService) { 
     this.route.params.subscribe(res => {
       this.get_about(res.page_route);
+      this.route_value = res.page_route
     })
   }
 

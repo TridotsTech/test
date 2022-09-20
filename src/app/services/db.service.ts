@@ -23,9 +23,19 @@ import { LocationStrategy } from '@angular/common';
 export class DbService {
 
 
-  domain = "demo.go1cms.com";
-  // domainurl = "nunmaan.tridotstech.com"
-  domainurl = "demo.go1cms.com"
+  // domain = "demo.go1cms.com";
+  // domainurl = "demo.go1cms.com"
+  domain = "webservice.go1cms.com";
+  domainurl = "webservice.go1cms.com"
+
+  // domain = "core.go1cms.com";
+  // domainurl = "core.go1cms.com"
+
+  // domain = "agency.go1cms.com";
+  // domainurl = "agency.go1cms.com"
+
+  // domain = "admin.go1cms.com";
+  // domainurl = "admin.go1cms.com"
   baseUrl = `https://${this.domainurl}/`;
   baseResource = `https://${this.domainurl}/api/resource/`;
   baseMethod= `https://${this.domainurl}/api/method/`;
@@ -269,7 +279,7 @@ isInViewport(class_name){
         
         this.current_page_builder_data = data.application_type
         this.viewContent = res.message.page_content;
-        this.check_header_footer(this.viewContent,data);
+        this.check_header_footer(this.viewContent,res);
         // this.viewContent.map(res =>{
         //   if(res.btn != undefined || res.btn != null){
         //     res.btn ? res.btn_text = JSON.parse(res.btn):'';  
@@ -344,16 +354,18 @@ isInViewport(class_name){
       }
     }
 
-
+    // console.log(data)
     if(data.message && data.message.footer_content){
        this.footer_info =  data.message.footer_content;
        this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
        this.check_footer_layout();
+       console.log(this.footer_info)
     }else {
       if(this.website_settings && this.website_settings.footer_template){
         this.footer_info = this.website_settings.footer_template;
         this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
         this.check_footer_layout();
+       
       }else{
         this.get_website_settings();
       }

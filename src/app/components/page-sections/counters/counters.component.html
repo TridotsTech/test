@@ -112,13 +112,14 @@
   </div>
 </div>
 <!-- Section counter- Banner with counter  (Section-6)-->
-<div class="{{item.class_name}} py-30 relative" [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" *ngIf="item.section_type == 'Static Section' && item.section_name == 'Counters 6'">
-  <div class="container__div">
+<div class="{{item.class_name}} py-30 relative counters_6" *ngIf="item.section_type == 'Static Section' && item.section_name == 'Counters 6'">
+  <div class="">
     <!-- [style.background-image]="'url('+db.product_img(item.bg_image)+')'" -->
     <ul class="container_bg d__flex bg_image">
       <li class="counter--list d__flex" *ngFor="let data of item.counter_data">
         <h4 class="count_value">{{data.count_value}}</h4>
-        <h5 class="set--width webkit-text count_title" [style.--line]="2">{{data.count_title}}</h5>
+        <ion-icon name="add-outline"></ion-icon>
+        <p class="set--width m-0 webkit-text count_title" [style.--line]="2">{{data.count_title}}</p>
       </li>
     </ul>
   </div>

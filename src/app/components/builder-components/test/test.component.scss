@@ -1,37 +1,8 @@
-// global
-// title
+
 ion-button{
     max-width: 100%;
     text-transform: none
 }
-// h1{
-//     font-weight: 700;
-//     font-size: 40px;
-//     // color: var(--primary-bg);
-//      color: var(--white);
-//      margin: 0 !important;
-// }
-// h2{
-//     font-weight: 700;
-//     font-size: 36px;
-//     // color: var(--primary-bg);
-//      color: var(--primary-color);
-//      margin: 0 !important;
-// }
-// // subtitle
-// h6{
-//     font-size: 18px;
-//     color: var(--text-color);
-//     margin: 0!important;
-// }
-// //content
-// p{
-//     line-height: 30px;
-//     font-size: 15px;
-//     font-family: poppins;
-//     color: var(--secondary-bg);
-// }
-// .title
 
 // general
 .test_classs{
@@ -403,10 +374,15 @@ ion-button{
 // bala card
 //start
 .feature_image_width{
-    max-width: 800px;
+    gap: 20px;
     margin: auto;
     padding: 10px;
+    :hover{
+        background: var(--primary-color);
+        color: var(--white);
+      }
     .feature_card{
+      flex: 0 0 33%;
       padding: 28px;
       margin: 10px auto;
       border-radius: 5px;
@@ -414,7 +390,11 @@ ion-button{
     }
     .faq_icon{
          font-size: 30px;
-         max-width: 35px;   
+         max-width: 35px;  
+         margin: auto; 
+     }
+     .title,.content{
+        text-align: center;
      }
  }
 @media screen and (max-width:768px){
@@ -615,7 +595,7 @@ border: 1px solid var(--primary-color);
                  border-radius: 0 20px 20px 20px;
                  padding: 35px;
                  .count_color_change{
-                    color:hsl(34deg 100% 64%);
+                    color:var(--primary-color);
                 }
     .fnt-48 {
         font-size: 48px;
@@ -843,7 +823,7 @@ border: 1px solid var(--primary-color);
             padding: 4px;
             margin: 0 auto;
             border-radius: 50%;
-            border: 1px solid #663399;
+            border: 1px solid var(--primary-color);
             img{
                 width: 100px !important;
                 height: 90px !important;
@@ -913,7 +893,7 @@ border: 1px solid var(--primary-color);
         }
         .command{
             font-size: 40px;
-            color: #663399;
+            color: var(--primary-color);
             line-height: 55px;
             font-weight: 600;
                     }
@@ -1879,7 +1859,6 @@ border: 1px solid var(--primary-color);
 // section 
 .section_container{
     display: grid;
-    max-width: 100%;
 }
 @media screen and (min-width:768px) {
     .title_component{

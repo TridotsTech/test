@@ -3,13 +3,16 @@
 
 <app-header *ngIf="db.ismobile" title="{{internship}}" [no_home]="true" [back_route]="db.ismobile?'/home':'/'" [no_cart]="true"></app-header>
 
-<ion-content [scrollEvents]="true" (ionScroll)="db.scrolled($event)">
+<ion-content [scrollEvents]="true" (ionScroll)="db.scrolled($event)" class="{{route_value}}">
 
    <!-- <app-header class="desktop-header sticky__header" [class.transparent_header]="db.transparent_header&& db.transparent_header == 1" [desktop]="true"></app-header> -->
-   <app-header class="desktop-header"   [class.sticky__header]="db.header_info && db.header_info.sticky_header && db.header_info.sticky_header == 1 && db.header_info.is_transparent_header == 0" 
-   [class.transparent_sticky]="db.header_info  && db.header_info.is_transparent_header && db.header_info.is_transparent_header == 1 && db.header_info.sticky_header == 1"
-   [class.transparent_scroll]="db.header_info  && db.header_info.is_transparent_header && db.header_info.is_transparent_header == 1 && db.header_info.sticky_header == 0"
-   [desktop]="true"></app-header>
+   <div class="absolute_class"  [class.sticky__header]="db.scroll_event.header_sticky && db.header_info && db.header_info.sticky_header && db.header_info.sticky_header == 1 && db.header_info.is_transparent_header == 0" >
+      <app-header class="desktop-header"  
+      [class.transparent_sticky]="db.header_info  && db.header_info.is_transparent_header && db.header_info.is_transparent_header == 1 && db.header_info.sticky_header == 1"
+      [class.transparent_scroll]="db.header_info  && db.header_info.is_transparent_header && db.header_info.is_transparent_header == 1 && db.header_info.sticky_header == 0"
+      [desktop]="true"></app-header>
+   </div>
+   
    <div  [class.min-vh]="!db.ismobile">
       <!-- <app-page-builder *ngIf="content_data && content_data.length != 0" [about_us]="true" [internship]="internship" [viewContent]="content_data"></app-page-builder> -->
       <app-template-builder *ngIf="content_data && content_data.length != 0"  [sections]="content_data"></app-template-builder>

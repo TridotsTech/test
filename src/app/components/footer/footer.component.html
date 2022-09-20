@@ -41,7 +41,7 @@
           <a routerLink="/" routerDirection="forward"><img class="home__logo mouse"  [src]="db.product_img(item.logo)" ></a>
            <div class="location"> 
              <div>
-               <a *ngIf="item.content" class="m-0  about_content" [innerHtml]="item.content"></a>
+               <p *ngIf="item.content" class="m-0  about_content" [innerHtml]="item.content"></p>
             </div>   
            </div>
          </div>
@@ -63,7 +63,7 @@
              <p *ngIf="item.sub_title">{{item.sub_title}}</p>
              <div class="sus-button d__flex">
                 <ion-input placeholder=""></ion-input>
-                <ion-button fill="clear">Subscribe</ion-button>
+                <ion-button class="primary-btn" fill="clear">Subscribe</ion-button>
              </div>
          </div>
 

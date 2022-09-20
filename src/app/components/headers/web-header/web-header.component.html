@@ -19,7 +19,7 @@
         <!-- (click)="cart_pop.emit('mycart')" -->
         <div *ngIf="data.layout_data.section_name == 'Header Button' && data.layout_data.section_type == 'Static Section'"  class="custom-button cart__badge d__flex m-0 w-100 mouse"  >
             <div class="d__column">
-              <ion-button button  fill="clear" [href]="data.layout_data.button_link" [target]="data.layout_data.link_target">{{data.layout_data.button_text}}</ion-button>
+              <ion-button button class="primary-btn" fill="clear" [href]="data.layout_data.button_link" [target]="data.layout_data.link_target">{{data.layout_data.button_text}}</ion-button>
             </div> 
         </div>
      

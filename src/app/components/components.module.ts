@@ -68,6 +68,7 @@ import { TextComponent } from './builder-components/text/text.component';
 import { BuilderSliderComponent } from './builder-components/builder-slider/builder-slider.component';
 import { TemplateBuilderComponent } from './builder-components/template-builder/template-builder.component';
 import { BuilderListComponent } from './builder-components/builder-list/builder-list.component';
+import { LandingPageComponent } from './page-sections/landing-page/landing-page.component';
 
 
 @NgModule({
@@ -120,7 +121,8 @@ import { BuilderListComponent } from './builder-components/builder-list/builder-
     TextComponent,
     BuilderSliderComponent,
     BuilderPricingComponent,
-    BuilderListComponent
+    BuilderListComponent,
+    LandingPageComponent
 
   ],
   imports: [
@@ -184,7 +186,8 @@ import { BuilderListComponent } from './builder-components/builder-list/builder-
     TextComponent,
     BuilderSliderComponent,
     BuilderPricingComponent,
-    BuilderListComponent
+    BuilderListComponent,
+    LandingPageComponent
  ]
 })
 export class ComponentsModule { }

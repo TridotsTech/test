@@ -20,6 +20,7 @@ import { IonContent } from '@ionic/angular';
 export class InternshipPage implements OnInit {
   
   content_data:any;
+  route_value;
   internship:any = '';
   @ViewChild(IonContent) content:IonContent;
   scroll_top:any = false;
@@ -29,6 +30,7 @@ export class InternshipPage implements OnInit {
       // if(res.page_route == 'schedule-and-events'){
       //   this.internship = this.internship.split("and").join("&");
       // }
+      this.route_value = res.page_route
       this.get_about(res.page_route);
 
       // if(this.internship == 'gallery'){
