@@ -12,6 +12,9 @@ import { HostListener } from '@angular/core';
 export class HomePage implements OnInit {
 
   @ViewChild(IonContent) content:IonContent;
+
+  scroll_top:any = false;
+
   constructor(public db:DbService,public router:ActivatedRoute) {
     
   }
@@ -35,5 +38,17 @@ export class HomePage implements OnInit {
     this.db.header_info = this.db.website_settings.default_header;
   } 
 
+  scrollToTop() {
+    this.content.scrollToTop(400);
+  }
+
+  @HostListener('ionScroll', ['$event']) onScroll(event){
+    if(event.detail.scrollTop > 0){
+      this.scroll_top = true;
+    }
+    else{
+      this.scroll_top = false;
+    }
+  }
 
 }

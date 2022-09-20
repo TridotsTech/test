@@ -14,24 +14,26 @@
       <div *ngFor="let row of detail_values"  [ngClass]="row.fullwidth? '':'container'">
          <!-- <div  *ngIf="row.columns && row.columns.length != 0"> -->
           
-            <div *ngFor="let out_row of row.rows" class="section_container" [ngStyle]="out_row['columns'] ?  assign(out_row) : '' " [style.margin]="out_row.margin ? out_row.margin : ''">
-              
+            <div *ngFor="let out_row of row.rows" class="section_container" [ngStyle]="out_row['columns'] ?  assign(out_row) : '' " [style.margin]="out_row['margin'] ? out_row['margin'] : ''">
+              <!-- {{out_row.columns | json}} -->
                <app-detail-style *ngIf="out_row['data']" [value]="out_row" [detail]="content_datas"></app-detail-style>
-
-               <div *ngFor="let row_ of out_row.columns" class="section_container" [ngStyle]="row_['columns'] ?  assign(row_) : '' " [style.margin]="row_.margin ? row_.margin : ''">
-            
-                  <app-detail-style *ngIf="row_['data']" [value]="row_" [detail]="content_datas"></app-detail-style>
-      
-                   <div *ngFor="let row__ of row_.rows" class="section_container" [ngStyle]="row__['columns'] ?  assign(row__) : '' " [style.margin]="row__.margin ? row__.margin : ''">
-                      <app-detail-style *ngIf="row__['data']" [value]="row__" [detail]="content_datas"></app-detail-style>
-      
-                      <div *ngFor="let col of row__.columns" class="section_container">
-                        <app-detail-style class="d__flex" *ngIf="col['data']" [value]="col" [detail]="content_datas"></app-detail-style>
-                     </div>
-      
-                   </div>
-                   
-               </div>
+              
+                  <div *ngFor="let row_col of out_row.columns" class="section_container" [ngStyle]="row_col['columns'] ?  assign(row_col) : '' "  [style.margin]="row_col['margin'] ? row_col['margin'] : ''">
+               
+                     <app-detail-style *ngIf="row_col['data']" [value]="row_col" [detail]="content_datas"></app-detail-style>
+         
+                      <div *ngFor="let row__ of row_col.rows" class="section_container" [ngStyle]="row__['columns'] ?  assign(row__) : '' " [style.margin]="row__['margin'] ? row__['margin'] : ''">
+                         <app-detail-style *ngIf="row__['data']" [value]="row__" [detail]="content_datas"></app-detail-style>
+         
+                         <div *ngFor="let col of row__.columns" class="section_container">
+                           <app-detail-style class="d__flex" *ngIf="col['data']" [value]="col" [detail]="content_datas"></app-detail-style>
+                        </div>
+         
+                      </div>
+                      
+                  </div>
+         
+               
 
             </div>
             

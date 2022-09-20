@@ -13,7 +13,7 @@
         </a> -->
 
        <!-- <div *ngIf="product.show && product.child_menu.length != 0" class="sub-categoryy font"> -->
-        <ul *ngIf="product.show && product.length != 0" class="sub-categoryy font">
+        <ul *ngIf="product.show && product.length != 0" class="sub-categoryy go1-cms-dropdown font">
           <li #child_productdown class="childs first-level" [class.not__child]="product.separate_drop_down"  *ngFor="let item of product.child_menu"  (mouseenter)="item.show = true" (mouseleave)="item.show = false">
             <a class="d__flex sub__category mouse p-5 gap-10 just-s m-0" (click)="product.show = false"  routerLink="/{{item.redirect_url}}">
                 {{item.menu_label}}<ion-icon name="chevron-forward-outline"></ion-icon>

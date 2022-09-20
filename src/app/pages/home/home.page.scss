@@ -16,3 +16,22 @@
     left: 0;
 
 }
+
+.scolltoTop{
+    position: fixed;
+    right: 40px;
+    z-index: 9999999;
+    bottom: 30px;
+    padding: 15px 10px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    ion-icon{
+      color: #fff;
+      font-size: 15px;
+    }
+  }

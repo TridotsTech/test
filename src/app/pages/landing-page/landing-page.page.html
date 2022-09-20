@@ -1,0 +1,9 @@
+<app-header *ngIf="db.ismobile"   title="home" [home]="true" ></app-header>
+
+<ion-content>
+  <app-header class="desktop-header"  [desktop]="true"></app-header>
+
+  <div [class.min-vh]="!db.ismobile" class="pagebuilder__container back_image">
+    <app-page-builder *ngIf="db.viewContent && db.viewContent.length != 0" [viewContent]="db.viewContent"></app-page-builder>
+  </div>
+</ion-content>

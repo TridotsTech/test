@@ -1,7 +1,7 @@
 <div class="desktop__header"  [class.without_location]="db.website_settings.enable_multi_vendor == 1">
-    <ion-row *ngIf="db.header_layout" class=" d__flex just-s header__" >
+    <ion-row *ngIf="db.header_info && db.header_info.layout_json && db.header_info.layout_json.length != 0" class=" d__flex just-s header__" >
      
-     <div *ngFor="let data of db.header_layout[0].columns" class=""  [ngStyle]="db.img_style(data.width,'width')">
+     <div *ngFor="let data of db.header_info.layout_json[0].columns" class=""  [ngStyle]="db.img_style(data.width,'width')">
         <div  *ngIf="data.layout_data.section_name == 'Header Logo' && data.layout_data.section_type == 'Static Section'" class="header_logo logo logos gap-50" >
         <a routerLink="/" routerDirection="root">
           <!-- <img *ngIf="db.video_header" class="home__logo mouse"  src="assets/imgs/white-logo.png" > -->

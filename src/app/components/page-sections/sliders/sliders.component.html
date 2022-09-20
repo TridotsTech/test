@@ -57,7 +57,7 @@
   </div>
 
   <!-- slider 3-->
-  <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'Content with slider 2'" class="{{item.class_name}} header_slider_three_bg " [style.background-image]="'url('+db.product_img(item.bg_image)+')'">
+  <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'Content with slider 2'" class="{{item.class_name}} header_slider_three_bg bg_image" [style.background-image]="'url('+db.product_img(item.bg_image)+')'">
     <div class="main-width flex_row d__flex">
       <div class="slider_three_content ">
         <h5 class="slider_three_subtitle title heading sub_title">{{item.sub_title}}</h5>
@@ -102,7 +102,7 @@
   <div *ngIf="item.section_type == 'Static Section' && item.section_name == 'Content with slider 4'" class="header_slider_five_bg {{item.class_name}} "[style.background-image]="'url('+db.product_img(item.bg_image)+')'">
     <div class="main-width flex_row main_flex">
       <div class="slider_five_content ">
-        <h5 class="slider_five_subtitle title heading sub_title">{{item.sub_title}}</h5>
+        <h5 class="slider_five_subtitle title heading sub_title m-0">{{item.sub_title}}</h5>
         <h2 class="slider_five_title title heading">{{item.title}}</h2>
         <p class="slider_sec_five_title subtitle content">{{item.content}}</p>
         <div>

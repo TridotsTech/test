@@ -57,8 +57,8 @@ export class DbService {
   android = false;
   location;
   header_info;  
-  header_layout;
-  header_info_item
+  // header_layout;
+  // header_info_item
   video_header = false;
   childs:any={}; //Selected child attributes
   product_box = { view : 'Grid View', row_count : 4 }
@@ -204,62 +204,6 @@ isInViewport(class_name){
     }
   }
 
-  get_home_data() {
-    var data={
-        application_type: this.ismobile?"mobile":"web",
-        domain : this.domainurl,
-        route : "home-page",
-        business : ""
-    }
-    this.get_mobile_homepage(data).subscribe( res => {
-        // this.viewcontent_serach = res.message;
-        
-        this.current_page_builder_data = data.application_type
-        this.viewContent = res.message.page_content;
-
-        this.viewContent.map(res =>{
-          if(res.btn != undefined || res.btn != null){
-            res.btn ? res.btn_text = JSON.parse(res.btn):'';  
-          }
-          if(res.btn1 != undefined || res.btn1 != null){
-            res.btn1 ? res.btn_text = JSON.parse(res.btn1):''; 
-          }
-         
-        })
-
-        this.footer_info = (this.website_settings && this.website_settings.footer_template) ? this.website_settings.footer_template : undefined;
-        if(this.footer_info){
-          this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
-        }
-        this.check_footer_layout();
-
-           
-        if(res.message.header_content){
-         this.header_info = res.message.header_content;
-        // console.log('this.db.header_info',this.db.header_info)
-        }else{
-          this.header_info = this.website_settings.header_content;
-        //  console.log('this.db.header_info',this.db.header_content)
-        }
-        // console.log("page",this.viewContent)
-        // this.get_cart_item();
-    },
-     error => { 
-      // console.log(JSON.stringify(errSor.json())); 
-    })
-  } 
-  get_parent_category(){
-
-    var data = { domain: this.domainurl,show_count : 1  }
-    if(this.category.length == 0){
-      this.get_parent_categories(data).subscribe(data => {
-        this.category = data.message;  
-        
-        // console.log('this.category',this.category) 
-      });
-    }
-  }
-
   img_style(data, type) {
     if (type == 'color') {
       return { 'background': data };
@@ -312,30 +256,144 @@ isInViewport(class_name){
 
   favIcon: HTMLLinkElement = document.querySelector('#appIcon');
 
+  
+  get_home_data() {
+    var data={
+        application_type: this.ismobile?"mobile":"web",
+        domain : this.domainurl,
+        route : "home-page",
+        business : ""
+    }
+    this.get_mobile_homepage(data).subscribe( res => {
+        // this.viewcontent_serach = res.message;
+        
+        this.current_page_builder_data = data.application_type
+        this.viewContent = res.message.page_content;
+        this.check_header_footer(this.viewContent,data);
+        // this.viewContent.map(res =>{
+        //   if(res.btn != undefined || res.btn != null){
+        //     res.btn ? res.btn_text = JSON.parse(res.btn):'';  
+        //   }
+        //   if(res.btn1 != undefined || res.btn1 != null){
+        //     res.btn1 ? res.btn_text = JSON.parse(res.btn1):''; 
+        //   }
+         
+        // })
+
+        // this.footer_info = (this.website_settings && this.website_settings.footer_template) ? this.website_settings.footer_template : undefined;
+        // if(this.footer_info){
+        //   this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
+        // }
+        // this.check_footer_layout();
+
+           
+        // if(res.message.header_content){
+        //  this.header_info = res.message.header_content;
+        // }else{
+        //   this.header_info = this.website_settings.header_content;
+        // }
+
+    },
+     error => { 
+      // console.log(JSON.stringify(errSor.json())); 
+    })
+  } 
+
+
+  
+
+
+  get_parent_category(){
+
+    var data = { domain: this.domainurl,show_count : 1  }
+    if(this.category.length == 0){
+      this.get_parent_categories(data).subscribe(data => {
+        this.category = data.message;  
+      });
+    }
+  }
+
+
+  check_header_footer(content_data,data){
+
+    content_data.map(res =>{
+        
+      if(res.layout_json){
+        res.layout_json = JSON.parse(res.layout_json);
+      }
+
+      if(res.btn != undefined || res.btn != null){
+        res.btn ? res.btn_text = JSON.parse(res.btn):'';
+      }
+
+      if(res.btn1 != undefined || res.btn1 != null){
+        res.btn1 ? res.btn_text1 = JSON.parse(res.btn1):''; 
+      }
+    })
+
+    if(data.message && data.message.footer_content){
+       this.footer_info =  data.message.footer_content;
+       this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
+       this.check_footer_layout();
+    }else {
+      if(this.website_settings && this.website_settings.footer_template){
+        this.footer_info = this.website_settings.footer_template;
+        this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
+        this.check_footer_layout();
+      }else{
+        this.get_website_settings();
+      }
+    }
+       
+    if(data.message && data.message.header_content){
+      this.header_info = data.message.header_content;
+      this.header_info.layout_json =  JSON.parse(this.header_info.layout_json);
+      this.check_header_layout();
+    }else{
+
+      if(this.website_settings && this.website_settings.header_template){
+        this.header_info = this.website_settings.header_template;
+      }else{
+        this.get_website_settings();
+      }
+    }
+
+  }
+
+
   get_website_settings(){
     this.get_all_website_settings().subscribe(res =>{
       this.website_settings = res.message;
-      // console.log("WEBSITE",this.website_settings);
       this.favIcon.href = (this.website_settings.theme_settings && this.website_settings.theme_settings.favicon) ? this.product_img(this.website_settings.theme_settings.favicon) : '';
       this.category_list = this.website_settings.additional_menus;
       
-      this.header_info_item = (this.website_settings.header_template && this.website_settings.header_template.items) ? this.website_settings.header_template.items : [];
-      this.header_info = this.website_settings.header_template;
-      this.header_layout=(this.website_settings.header_template && this.website_settings.header_template.layout_json) ? JSON.parse(this.website_settings.header_template.layout_json) : [];   
-      this.transparent_header=this.header_info.is_transparent_header;
 
+      this.header_info = (this.website_settings && this.website_settings.header_template) ? this.website_settings.header_template : undefined;
+      if(this.header_info){
+        this.header_info.layout_json =  JSON.parse(this.header_info.layout_json);
+      }
+  
       this.footer_info = (this.website_settings && this.website_settings.footer_template) ? this.website_settings.footer_template : undefined;
       if(this.footer_info){
         this.footer_info.layout_json =  JSON.parse(this.footer_info.layout_json);
       }
 
+      this.check_footer_layout();
+      this.check_header_layout();
       console.log(this.footer_info)
+      // this.header_info_item = (this.website_settings.header_template && this.website_settings.header_template.items) ? this.website_settings.header_template.items : [];
+      // this.header_info = this.website_settings.header_template;
+      // this.header_layout = (this.website_settings.header_template && this.website_settings.header_template.layout_json) ? JSON.parse(this.website_settings.header_template.layout_json) : [];   
+      // this.transparent_header = this.header_info.is_transparent_header;
+      
+      console.log(this.header_info)
+
+    
       // this.footer_info = (this.website_settings.footer_template && this.website_settings.footer_template.items) ? this.website_settings.footer_template.items : [];
       // this.footer_layout = (this.website_settings.footer_template && this.website_settings.footer_template.layout_json) ? JSON.parse(this.website_settings.footer_template.layout_json) : [];
       // this.footer_layout.footer_content = (this.website_settings.footer_template && this.website_settings.footer_template.enable_copyright == 1) ? this.website_settings.footer_template.footer_content : '';
       
-      this.check_footer_layout();
-      this.check_header_layout();
+  
       // this.check_footer(); 
 
       // bala
@@ -346,32 +404,47 @@ isInViewport(class_name){
   check_footer_layout(){
     this.footer_info.layout_json.map(res =>{
       res.columns.map((rec,index) =>{
-        // let social_link = this.footer_info.items.filter(res => res.section_name == "Social Links" && res.section_type == "Static Section")     
-        // if(social_link){
-        //   // this.footer_info.layout_json.social_links = social_link;
-        // }
-        let check = this.footer_info.items.filter(res => res.column_index == index);     
+        let check = this.footer_info.items.find(res => res.column_index == index);     
           if(check)
-            rec.layout_data = check;
+            rec.layout_data = check.items;
         })
     }) 
   }
 
   check_header_layout(){
-       this.header_layout.map(res =>{
-        res.columns.map((rescol,index)=>{
-              let data = this.header_info_item.find(res=>res.column_index == index) 
-              if(data){
-                if(this.header_info.call_to_action_button == 1 && (data.section_name == 'Header Button' && data.section_type == 'Static Section')){
-                   rescol.layout_data = data;
-                   let values = {button_link:this.header_info.button_link, button_text: this.header_info.button_text, link_target: this.header_info.link_target};
-                   rescol.layout_data = {...rescol.layout_data,...values};
-                }else{
-                  rescol.layout_data = data;
+
+    this.header_info.layout_json.map(res =>{
+      res.columns.map((rescol,index)=>{
+            let data = this.header_info.items.find(res=>res.column_index == index) 
+            if(data){
+              if(this.header_info.call_to_action_button == 1 && (data.section_name == 'Header Button' && data.section_type == 'Static Section')){
+                 rescol.layout_data = data;
+                 let values = {button_link:this.header_info.button_link, button_text: this.header_info.button_text, link_target: this.header_info.link_target};
+                 rescol.layout_data = {...rescol.layout_data,...values};
+              }else{
+                rescol.layout_data = data;
+                if(data.section_name == 'Header Menu' && data.section_type == 'Menu'){
+                  this.header_info.menu = data;
                 }
               }
-        })
-       })
+            }
+      })
+     })
+
+      //  this.header_layout.map(res =>{
+      //   res.columns.map((rescol,index)=>{
+      //         let data = this.header_info_item.find(res=>res.column_index == index) 
+      //         if(data){
+      //           if(this.header_info.call_to_action_button == 1 && (data.section_name == 'Header Button' && data.section_type == 'Static Section')){
+      //              rescol.layout_data = data;
+      //              let values = {button_link:this.header_info.button_link, button_text: this.header_info.button_text, link_target: this.header_info.link_target};
+      //              rescol.layout_data = {...rescol.layout_data,...values};
+      //           }else{
+      //             rescol.layout_data = data;
+      //           }
+      //         }
+      //   })
+      //  })
   }
 
 

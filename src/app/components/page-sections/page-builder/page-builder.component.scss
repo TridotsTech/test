@@ -7342,9 +7342,9 @@ a:hover {
 }
 
 .ourteam_role {
-  font-size: 16px;
+  // font-size: 16px;
   opacity: 0.5;
-  font-family: outfit;
+  // font-family: outfit;
   color: #fff;
 }
 
@@ -7359,7 +7359,7 @@ a:hover {
 @media screen and (min-width:768px) {
   .ourteam_two_images {
     flex-wrap: wrap;
-    width: 95%;
+    // width: 95%;
   }
 }
 
@@ -7367,7 +7367,7 @@ a:hover {
   .ourteam_two_images {
     flex-wrap: nowrap;
     overflow: auto;
-    width: 95%;
+    // width: 95%;
     padding: 10px 0px;
     margin: 0px;
   }
@@ -8340,10 +8340,10 @@ a:hover {
     .card-vision {
       border-top: 1px solid #4b55633a;
 
-      .team_title_top {
-        margin-top: 23px;
-        color: var(--primary-color) !important;
-      }
+      // .team_title_top {
+      //   margin-top: 23px;
+      //   color: var(--primary-color) !important;
+      // }
 
       .team_content {
         margin-bottom: 18px;
@@ -8412,6 +8412,10 @@ a:hover {
 // bala
 .absolute_breadcrumb {
   top: 39.2% !important;
+}
+
+.mt-20{
+  margin-top: 20px;
 }
 
 // List 1

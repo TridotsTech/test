@@ -2,14 +2,14 @@
           <!-- button -->
           <div *ngIf="row.component_type=='Button Style1'" class="component_container">
             <ion-button class="button_name" [routerLink]="row.link">
-              {{row.button_name}}
+              {{row.data.button_name}}
             </ion-button>
           </div>
           <!-- button_2 -->
           <div *ngIf="row.component_type=='Button Style2'" class="component_container">
-            <ion-button class="">{{row.button_name}} </ion-button>
+            <ion-button class="">{{row.data.button_name}} </ion-button>
           </div>
           <!-- button_3 -->
           <div *ngIf="row.component_type=='Button Style3'" class="custom-button component_container" >
-              <ion-button button  fill="clear" [routerLink]="">{{row.button_name}}</ion-button>
+              <ion-button button  fill="clear" [routerLink]="">{{row.data.button_name}}</ion-button>
           </div>

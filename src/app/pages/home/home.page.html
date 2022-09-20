@@ -1,13 +1,4 @@
-<!-- <ion-header *ngIf="false">
-    <ion-toolbar>
-      <ion-title>Home Page</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-        <app-page-builder></app-page-builder>
-  </ion-content> -->
-  
+
 <app-header *ngIf="db.ismobile"   title="home" [home]="true" ></app-header>
 
 <ion-content [scrollEvents]="true" (ionScroll)="db.scrolled($event)" class="home-page">
@@ -15,7 +6,8 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher> -->
   <!-- [class.transparent_header]="db.transparent_header==1 && db.transparent_header" -->
-  <div>
+  <!-- [class.sticky__header]="db.header_info.sticky_header && db.header_info.sticky_header == 1" -->
+  <div>   
     <app-header class="desktop-header"  [desktop]="true"></app-header>
   </div>
 
@@ -32,4 +24,8 @@
           <app-footer class="footer"></app-footer>
       </div>
   </div>
+
+  <div class="scolltoTop" *ngIf="!db.ismobile && scroll_top && db.website_settings.theme_settings.back_to_top == 1" (click)="scrollToTop()">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+   </div>
 </ion-content>

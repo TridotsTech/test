@@ -5,8 +5,9 @@ import { DbService } from 'src/app/services/db.service';
 @Component({
   selector: 'app-default-header',
   templateUrl: './default-header.component.html',
-  styleUrls: ['../secondary-header/secondary-header.component.scss','../web-header/web-header.component.scss','./default-header.component.scss'],
+  styleUrls: ['../web-header/web-header.component.scss','./default-header.component.scss'],
 })
+// '../secondary-header/secondary-header.component.scss'
 export class DefaultHeaderComponent implements OnInit {
 
   drop_down2 = false;

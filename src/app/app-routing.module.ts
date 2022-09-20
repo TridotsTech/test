@@ -105,7 +105,11 @@ const routes: Routes = [
   {
     path: 'c',
     loadChildren: () => import('./pages/page-builder/page-builder.module').then( m => m.PageBuilderPageModule)
+  },  {
+    path: 'landing-page',
+    loadChildren: () => import('./pages/landing-page/landing-page.module').then( m => m.LandingPagePageModule)
   },
+
 
 
 

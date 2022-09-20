@@ -47,37 +47,37 @@ export class ListPage implements OnInit {
     this.db.get_mobile_homepage(res).subscribe(data => 
       {
         this.content_data = data.message;
+        this.db.check_header_footer(this.content_data,data);
       
-      
-        if(data.message && data.message.footer_content){
-          // this.db.footer_info = data.message.footer_content.items;
-           this.db.footer_info =  data.message.footer_content;
-           this.db.footer_info.layout_json =  JSON.parse(this.db.footer_info.layout_json);
-           this.db.check_footer_layout();
-          //  console.log(this.db.footer_info)
-        }else {
+        // if(data.message && data.message.footer_content){
+        //   // this.db.footer_info = data.message.footer_content.items;
+        //    this.db.footer_info =  data.message.footer_content;
+        //    this.db.footer_info.layout_json =  JSON.parse(this.db.footer_info.layout_json);
+        //    this.db.check_footer_layout();
+        //   //  console.log(this.db.footer_info)
+        // }else {
          
-          if(this.db.website_settings && this.db.website_settings.footer_template){
-            this.db.footer_info = this.db.website_settings.footer_template;
-            this.db.footer_info.layout_json =  JSON.parse(this.db.footer_info.layout_json);
-            this.db.check_footer_layout();
-          }else{
-            this.db.get_website_settings();
-          }
+        //   if(this.db.website_settings && this.db.website_settings.footer_template){
+        //     this.db.footer_info = this.db.website_settings.footer_template;
+        //     this.db.footer_info.layout_json =  JSON.parse(this.db.footer_info.layout_json);
+        //     this.db.check_footer_layout();
+        //   }else{
+        //     this.db.get_website_settings();
+        //   }
           
-        }
+        // }
            
-        if(data.message && data.message.header_content){
-          this.db.header_info = data.message.header_content;
-          // console.log('aklcasscalmc')
-        }else{
+        // if(data.message && data.message.header_content){
+        //   this.db.header_info = data.message.header_content;
+        //   // console.log('aklcasscalmc')
+        // }else{
 
-          if(this.db.website_settings && this.db.website_settings.header_template){
-            this.db.header_info = this.db.website_settings.header_template;
-          }else{
-            this.db.get_website_settings();
-          }
-        }
+        //   if(this.db.website_settings && this.db.website_settings.header_template){
+        //     this.db.header_info = this.db.website_settings.header_template;
+        //   }else{
+        //     this.db.get_website_settings();
+        //   }
+        // }
 
       
       }, 

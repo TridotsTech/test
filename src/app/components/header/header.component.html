@@ -27,7 +27,7 @@
        </div>
       </div>
   </div>
-   <div *ngIf="db.header_info.is_dismissable && db.header_info.is_dismissable == 1"  class="closeicon"  (click)="removeicon()">
+   <div *ngIf="db.header_info.is_dismissable && db.header_info.is_dismissable == 1"  class="closeicon mouse"  (click)="removeicon()">
       <ion-icon name="close-outline"></ion-icon>
     </div>
 </div>   
@@ -35,7 +35,7 @@
 
 
 <!-- Web site header -->
-<!--  [class.transparent_header]="db.transparent_header && db.transparent_header == 1 && !db.scroll_event.transparent_header" -->
+<!--  [class.transparent_header]="db.transparent_header && db.transparent_header == 1 && !db.scroll_event.transparent_header"  -->
 <div *ngIf="desktop && !db.ismobile"  class="web__header  go1-cms-header"   [ngStyle]="(!db.scroll_event.header_sticky && sub_header_value && sub_header_value.enabled && sub_header_value.enabled == 1 && sub_header_value.is_transparent == 1) ? (sub_header_value.sub_header_bg_img ?  db.img_style(sub_header_value.sub_header_bg_img,'full-bg-img__')  : db.img_style(sub_header_value.sub_header_bg_color,'color')) : null"  (click)="close_menu()" [class.non_web__header]="db.video_header && db.path == '/'" >
     <!-- [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0" -->
     <div class="main-width">
@@ -43,7 +43,7 @@
     </div>
     <div class="defalut_head">
       <div class="main-width">
-       <app-default-header [menu]="db.header_layout[0].columns.layout_data" *ngIf="(db.header_info && db.header_info.is_menu_full_width == 1) " (cart_pop)="cart_pop.emit($event)" ></app-default-header>
+       <app-default-header [menu]="db.header_info.menu" *ngIf="(db.header_info && db.header_info.is_menu_full_width == 1 && db.header_info.menu) " (cart_pop)="cart_pop.emit($event)" ></app-default-header>
       </div>
     </div>
     <div *ngIf="!db.scroll_event.header_sticky && sub_header_value && (sub_header_value.enabled == 1 && sub_header_value.is_transparent == 1)">

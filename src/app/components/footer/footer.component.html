@@ -1,9 +1,9 @@
 <div *ngIf="db.footer_info && db.footer_info.layout_json && db.footer_info.layout_json.length != 0" class="f2 footer__container go1-cms-footer">
   <!-- <div> -->
     <div class="footer main-width" *ngFor="let col of db.footer_info.layout_json">
-      <div *ngFor="let col_item of col.columns" [ngStyle]="db.img_style(col_item.width,'width')">
+      <div class="footer__" *ngFor="let col_item of col.columns" [ngStyle]="db.img_style(col_item.width,'width')">
         <div  *ngFor="let item of col_item.layout_data" class="" [class.icon_short_address]="item.section_name == 'Footer Contact' || item.section_name == 'Footer About' || item.section_name == 'Newsletter Subscription'" [class.links_w_title]="item.section_name == 'Menu'" [class.icon_app_download]="item.section_name == 'Footer Payment Gateways'" [class.Copyrights]="item.section_name == 'Footer Copyrights'">
-          <div *ngIf="item.section_name == 'Footer Contact' && item.section_type == 'Static Section'">
+          <div  class="{{item.class_name}}" *ngIf="item.section_name == 'Footer Contact' && item.section_type == 'Static Section'">
             <h2 class="go1-cms-footer-title m-0">{{item.title}}</h2>
             <div class="border_line"></div>
                <a *ngIf="item.logo" routerLink="/" routerDirection="forward"><img class="home__logo mouse"  [src]="db.product_img(item.logo)" ></a>
@@ -28,8 +28,16 @@
             </div>
            
           </div>
-     
-         <div *ngIf="item.section_name == 'Footer About' && item.section_type == 'Static Section'">
+      
+          <div class="social_link {{item.class_name}}" *ngIf="item.section_name == 'Social Links' && item.section_type == 'Static Section'">
+            <ul class="ul__" *ngIf="item.social_links && item.social_links.length != 0">
+              <li class="d__flex social__icons_" *ngFor="let data of item.social_links">
+                <a  [href]="data.link_url" target="blank"><img [src]="db.product_img(data.icon)" class="contact-icon d__flex"/></a>
+              </li>
+            </ul>
+          </div>
+
+         <div  class="{{item.class_name}}" *ngIf="item.section_name == 'Footer About' && item.section_type == 'Static Section'">
           <a routerLink="/" routerDirection="forward"><img class="home__logo mouse"  [src]="db.product_img(item.logo)" ></a>
            <div class="location"> 
              <div>
@@ -38,7 +46,7 @@
            </div>
          </div>
        
-         <div *ngIf="item.section_name == 'Menu' && item.section_type == 'Menu'">
+         <div  class="{{item.class_name}}" *ngIf="item.section_name == 'Menu' && item.section_type == 'Menu'">
           <h2 class="go1-cms-footer-title m-0">{{item.title}}</h2>
           <div class="border_line"></div>
           <div class="container_f" *ngFor="let data of item.menus">
@@ -48,7 +56,8 @@
               </a>
           </div>
          </div>
-         <div *ngIf="item.section_name == 'Newsletter Subscription' && item.section_type == 'Static Section'"  >
+
+         <div  class="{{item.class_name}}" *ngIf="item.section_name == 'Newsletter Subscription' && item.section_type == 'Static Section'"  >
            <h6 class="go1-cms-footer-title m-0 heading">{{item.title}}</h6>
            <div class="border_line"></div>
              <p *ngIf="item.sub_title">{{item.sub_title}}</p>
@@ -57,7 +66,8 @@
                 <ion-button fill="clear">Subscribe</ion-button>
              </div>
          </div>
-         <div *ngIf="item.section_name == 'Footer Payment Gateways' && item.section_type == 'Static Section'"  >
+
+         <div  class="{{item.class_name}}" *ngIf="item.section_name == 'Footer Payment Gateways' && item.section_type == 'Static Section'"  >
           <div>
             <h6  class="go1-cms-footer-title m-0 heading">{{item.title}}</h6>
             <div class="image mb-10"> 

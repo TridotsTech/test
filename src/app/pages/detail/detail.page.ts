@@ -260,44 +260,45 @@ export class DetailPage implements OnInit {
 
   detail_values=[
     {
-      "fullwidth": true,
-      "u_id": "STL-0001_R1",
-      'rows':[{
-        "width": "100%",
-        'data':'title',
+      fullwidth: true,
+      u_id: "STL-0001_R1",
+      rows:[{
+        width: "100%",
+        data:'title',
+        columns:[]
        },
        {
-        "columns": [
+        columns: [
          {
-          "width": "55%",
-          "u_id": "STL-0001_R1_C2",
-          'margin': '0 10px 0 0',
-          "rows": [
+          width: "55%",
+          u_id: "STL-0001_R1_C2",
+          margin: '0 10px 0 0',
+          rows: [
             {
-              "width": "100%",
-              "u_id": "STL-0001_R1_C2_R2",
-              'data':'blog_intro',
-              "columns": []
+              width: "100%",
+              u_id: "STL-0001_R1_C2_R2",
+              data:'blog_intro',
+              columns: []
             },
             {
-              "width": "100%",
-              "u_id": "STL-0001_R1_C2_R2",
-              'data':'content',
-              "columns": []
+              width: "100%",
+              u_id: "STL-0001_R1_C2_R2",
+              data:'content',
+              columns: []
             },
           ]
          },
 
          {
-          "width": "45%",
-          "u_id": "STL-0001_R1_C2",
-          'margin': '0 0 0 10px',
-          "rows": [
+          width: "45%",
+          u_id: "STL-0001_R1_C2",
+          margin: '0 0 0 10px',
+          rows: [
             {
-              "width": "100%",
-              "u_id": "STL-0001_R1_C2_R2",
-              'data':'table',
-              "columns": []
+              width: "100%",
+              u_id: "STL-0001_R1_C2_R2",
+              data:'table',
+              columns: []
             }
            
           ]
@@ -306,31 +307,31 @@ export class DetailPage implements OnInit {
        },
 
        {
-        "columns": [
+        columns: [
          {
-          "width": "50%",
-          "u_id": "STL-0001_R1_C2",
-          "rows": [
+          width: "50%",
+          u_id: "STL-0001_R1_C2",
+          rows: [
             {
-              "width": "100%",
-              "u_id": "STL-0001_R1_C2_R2",
-              'data':'project_summary',
-              'margin': '0 10px 0 0',
-              "columns": []
+              width: "100%",
+              u_id: "STL-0001_R1_C2_R2",
+              data:'project_summary',
+              margin: '0 10px 0 0',
+              columns: []
             }
           ]
          },
 
          {
-          "width": "50%",
-          "u_id": "STL-0001_R1_C2",
-          "rows": [
+          width: "50%",
+          u_id: "STL-0001_R1_C2",
+          rows: [
             {
-              "width": "100%",
-              "u_id": "STL-0001_R1_C2_R2",
-              'data':'Final_Results',
-              'margin': '0 0 0 10px',
-              "columns": []
+              width: "100%",
+              u_id: "STL-0001_R1_C2_R2",
+              data:'Final_Results',
+              margin: '0 0 0 10px',
+              columns: []
             }
           ]
          }
@@ -338,8 +339,9 @@ export class DetailPage implements OnInit {
        },
 
        {
-        "width": "100%",
-        'data':'gallery',
+        width: "100%",
+        data:'gallery',
+        columns:[]
        },
      ],
     }

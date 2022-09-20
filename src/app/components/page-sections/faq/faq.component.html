@@ -23,7 +23,7 @@
   </div>
 </div>
 <div *ngIf="item.section_type == 'Custom Section' && item.section_name =='FAQ Style 2'" class="left__accordion_right_image section__border container_reverce mb-40 {{item.class_name}} animate" [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0">
-  <div class="main-width d__flex">
+  <div class="d__flex">
     <div class="box__3">
       <h2 *ngIf="item.title" class="faq_title">{{item.title}}</h2>
       <p *ngIf="item.sub_title" class="faq_subtitle">{{item.sub_title}}</p>
@@ -81,7 +81,7 @@
 </div>
 <!-- Section Faq-Table format (section-4)-->
 <div *ngIf="item.section_type == 'Custom Section' && item.section_name =='FAQ Style 4'" class="left__accordion_right_image section__border container_reverce  {{item.class_name}} mb-40" [class.main-width-full]="item.is_full_width == 1" [class.main-width]="item.is_full_width == 0">
-  <div class="main-width d__flex">
+  <div class=" d__flex">
     <div class="box__2 left_image_faq">
       <div class="image setimage_padd">
         <img class="left_image" *ngIf="item.left_image" src="{{db.product_img(item.left_image)}}">

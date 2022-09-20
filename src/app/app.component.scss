@@ -165,3 +165,20 @@ ion-spinner{
   color: var(--body-text-color);
 }
 }
+
+.scroll_to_top{
+  position: fixed;
+  z-index: 9999;
+  background: var(--secondary-bg);
+  bottom: 35px;
+  right: 35px;
+  border-radius: 9px;
+  ion-icon{
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    color:var(--white);
+  }
+}

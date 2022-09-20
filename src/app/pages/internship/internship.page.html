@@ -5,8 +5,9 @@
 
 <ion-content [scrollEvents]="true" (ionScroll)="db.scrolled($event)">
 
-<!--   [class.sticky__]="db.scroll_event.header_sticky" absolute__header-->
-   <app-header class="desktop-header" [class.transparent_header]="db.transparent_header==1 && db.transparent_header" [desktop]="true"></app-header>
+<!-- [class.transparent_header]="db.transparent_header==1 && db.transparent_header"-->
+ 
+   <app-header class="desktop-header"  [desktop]="true"></app-header>
 
    <!-- <ion-grid class="header-bg" *ngIf="!db.ismobile">
       <ion-row>
@@ -33,6 +34,11 @@
         <app-footer  class="footer"></app-footer>
       </div>
   </div>
+
+  <div class="scolltoTop" *ngIf="!db.ismobile && scroll_top && db.website_settings.theme_settings.back_to_top == 1" (click)="scrollToTop()">
+   <ion-icon name="chevron-up-outline"></ion-icon>
+  </div>
+
 </ion-content>
 
  <!-- <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
